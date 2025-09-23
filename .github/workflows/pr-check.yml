@@ -1,0 +1,80 @@
+name: Pull Request Quality Check
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  quality-check:
+    name: Code Quality & Testing
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: TypeScript type checking
+        run: npm run type-check
+        
+      - name: ESLint code quality check
+        run: npm run lint
+        
+      - name: Prettier formatting check
+        run: npm run format:check
+        
+      - name: Run unit tests with coverage
+        run: npm run test:coverage
+        
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_ENV: production
+          
+      - name: Bundle size analysis
+        run: npm run build:analyze
+        
+      - name: Comment PR with results
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Read coverage results if available
+            let coverageComment = '';
+            try {
+              const coverage = JSON.parse(fs.readFileSync('./coverage/coverage-summary.json', 'utf8'));
+              const totalCoverage = coverage.total.lines.pct;
+              coverageComment = `📊 **Test Coverage**: ${totalCoverage}%`;
+            } catch (e) {
+              coverageComment = '📊 **Test Coverage**: Not available';
+            }
+            
+            const comment = `## 🔍 Pull Request Quality Check Results
+            
+            ✅ **TypeScript**: Type checking passed
+            ✅ **ESLint**: Code quality check passed  
+            ✅ **Prettier**: Code formatting check passed
+            ✅ **Tests**: All tests passed
+            ✅ **Build**: Application built successfully
+            ${coverageComment}
+            
+            Your pull request is ready for review! 🚀`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

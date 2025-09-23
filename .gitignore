@@ -1,0 +1,255 @@
+# ===================================
+# LiftFire Marketing Website .gitignore
+# ===================================
+
+# ===== DEPENDENCIES =====
+node_modules/
+jspm_packages/
+bower_components/
+
+# ===== BUILD OUTPUTS =====
+dist/
+dist-ssr/
+build/
+out/
+.output/
+.vercel/
+.netlify/
+
+# ===== LOGS =====
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===== ENVIRONMENT VARIABLES =====
+# Sensitive configuration files
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+.env.staging.local
+
+# API Keys and secrets
+.secrets
+secrets.json
+config/secrets.js
+config/keys.js
+
+# ===== CACHE DIRECTORIES =====
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vite/
+.turbo/
+.swc/
+.tsbuildinfo
+*.tsbuildinfo
+
+# TypeScript cache
+.tscache/
+node_modules/.cache/
+
+# ===== TESTING =====
+coverage/
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+test-results.xml
+junit.xml
+
+# ===== EDITOR & IDE =====
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===== OPERATING SYSTEM =====
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===== PACKAGE MANAGERS =====
+# npm
+.npm/
+.npmrc
+npm-debug.log*
+package-lock.json.bak
+
+# Yarn
+.yarn/
+.yarnrc
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
+.yarn-metadata.json
+
+# pnpm
+.pnpm-debug.log*
+.pnpm-store/
+
+# ===== RUNTIME & TEMPORARY =====
+*.local
+*.pid
+*.seed
+*.pid.lock
+.grunt/
+lib-cov/
+tmp/
+temp/
+.tmp/
+
+# ===== SECURITY & SENSITIVE DATA =====
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# ===== PROJECT SPECIFIC =====
+# Lighthouse reports
+lighthouse-report.html
+lighthouse-report.json
+lhci-reports/
+
+# Bundle analysis
+bundle-analyzer-report.html
+stats.json
+
+# Deployment verification results
+deployment-verification-*.json
+link-verification-*.json
+contact-form-test-*.json
+security-audit-*.json
+performance-audit-*.json
+
+# Generated SEO files (if they should be generated on build)
+# Uncomment if you want to exclude generated files:
+# public/sitemap.xml
+# public/robots.txt
+
+# Monitoring and analytics data
+monitoring-data/
+analytics-reports/
+
+# ===== DOCKER =====
+.dockerignore
+docker-compose.override.yml
+
+# ===== MISC =====
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettiercache
+
+# Stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Rush temporary files
+common/deploy/
+common/temp/
+common/autoinstallers/*/.npmrc
+**/.rush/temp/
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test/
+
+# Storybook build outputs
+storybook-static/
+
+# ===== KIRO IDE =====
+# Kiro IDE specific files (if any)
+.kiro/cache/
+.kiro/temp/
+.kiro
+
+# ===== COMMENTS =====
+# Add any project-specific files or directories below:
+# my-custom-config.json
+# private-notes.md

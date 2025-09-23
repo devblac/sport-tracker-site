@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "headline": "Transform Your Fitness Journey with LiftFire",
+    "subheadline": "The gamified gym tracker that works offline, connects you with friends, and uses AI to optimize your workouts.",
+    "primaryCTA": "Start Your Journey",
+    "secondaryCTA": "Watch Demo",
+    "trustIndicator": "Join 10,000+ fitness enthusiasts",
+    "copy": "Stop letting poor gym WiFi kill your workout tracking. LiftFire works 100% offline while gamifying your fitness journey with XP, achievements, and social challenges. Join thousands of fitness enthusiasts who've made working out addictive."
+  },
+  "features": {
+    "title": "Why Choose LiftFire?",
+    "subtitle": "Everything you need for a complete fitness tracking experience",
+    "offline": {
+      "title": "Never Miss a Rep",
+      "description": "Poor gym WiFi? No problem. LiftFire works completely offline, syncing your data when you're back online. Your workouts are always tracked, no matter where you train.",
+      "benefits": [
+        "Works in any gym, anywhere",
+        "No data usage concerns",
+        "Lightning-fast performance"
+      ]
+    },
+    "gamification": {
+      "title": "Level Up Your Workouts",
+      "description": "Earn XP for every workout, unlock achievements for milestones, and maintain streaks that adapt to your schedule. Make fitness as addictive as your favorite game.",
+      "benefits": [
+        "Earn XP for every workout",
+        "Unlock achievements and badges",
+        "Maintain workout streaks"
+      ]
+    },
+    "social": {
+      "title": "Train with Friends",
+      "description": "Connect with gym buddies, share achievements, and compete in challenges. Turn your fitness journey into a social experience that keeps you motivated.",
+      "benefits": [
+        "Add gym friends",
+        "Share workout achievements",
+        "Join community challenges"
+      ]
+    }
+  },
+  "socialProof": {
+    "title": "Trusted by Fitness Enthusiasts Worldwide",
+    "stats": {
+      "users": "10,000+ Active Users",
+      "workouts": "1M+ Workouts Tracked",
+      "satisfaction": "95% User Satisfaction",
+      "languages": "Available in 12 Languages"
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "items": [
+        {
+          "quote": "LiftFire completely changed how I approach the gym. The offline feature is a game-changer!",
+          "author": "Sarah M.",
+          "role": "Fitness Enthusiast"
+        },
+        {
+          "quote": "The gamification keeps me coming back. I'm actually excited to work out now!",
+          "author": "Mike R.",
+          "role": "Personal Trainer"
+        },
+        {
+          "quote": "Finally, a fitness app that works when the gym WiFi doesn't.",
+          "author": "Alex K.",
+          "role": "Powerlifter"
+        }
+      ]
+    }
+  },
+  "demo": {
+    "title": "See LiftFire in Action",
+    "subtitle": "Watch how easy it is to track your workouts and earn rewards",
+    "watchButton": "Watch Demo Video",
+    "tryButton": "Try It Now"
+  },
+  "finalCTA": {
+    "title": "Ready to Transform Your Fitness Journey?",
+    "subtitle": "Join thousands of users who have already discovered the power of gamified fitness tracking.",
+    "primaryButton": "Start Your Journey",
+    "secondaryButton": "Learn More",
+    "features": [
+      "Free to start",
+      "No credit card required",
+      "Works 100% offline"
+    ]
+  }
+}

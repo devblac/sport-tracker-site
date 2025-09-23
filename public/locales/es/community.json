@@ -1,0 +1,36 @@
+{
+  "seo": {
+    "title": "Comunidad - Únete a la Comunidad Fitness de LiftFire",
+    "description": "¡Únete a la comunidad de LiftFire! Conéctate con entusiastas del fitness, obtén soporte, contribuye al desarrollo y sé parte del futuro del seguimiento fitness.",
+    "keywords": "comunidad LiftFire,comunidad fitness,Discord,GitHub,pruebas beta,soporte fitness,comunidad entrenamientos,fitness código abierto"
+  },
+  "hero": {
+    "title": "Únete a la Comunidad LiftFire",
+    "description": "Conéctate con miles de entusiastas del fitness, contribuye al desarrollo de LiftFire y sé parte de una comunidad que está transformando cómo rastreamos y gamificamos el fitness."
+  },
+  "channels": {
+    "title": "Canales de Comunidad",
+    "description": "Elige la plataforma que mejor funcione para ti para conectar, aprender y contribuir al ecosistema LiftFire."
+  },
+  "beta": {
+    "title": "Únete a Nuestro Programa Beta",
+    "description": "Obtén acceso temprano a nuevas características, ayuda a dar forma al futuro de LiftFire y sé de los primeros en experimentar innovaciones de vanguardia en seguimiento fitness.",
+    "joinButton": "Unirse al Programa Beta",
+    "learnMore": "Saber Más"
+  },
+  "guidelines": {
+    "title": "Pautas de la Comunidad",
+    "respectful": {
+      "title": "Sé Respetuoso",
+      "description": "Trata a todos los miembros de la comunidad con respeto y amabilidad. Todos estamos aquí para apoyar los viajes fitness de cada uno."
+    },
+    "helpful": {
+      "title": "Sé Útil",
+      "description": "Comparte tu conocimiento, responde preguntas y ayuda a que los nuevos miembros se sientan bienvenidos en nuestra comunidad."
+    },
+    "constructive": {
+      "title": "Sé Constructivo",
+      "description": "Proporciona retroalimentación constructiva, reporta errores responsablemente y contribuye positivamente a las discusiones."
+    }
+  }
+}

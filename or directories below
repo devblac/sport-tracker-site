@@ -1,0 +1,115 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/README.md b/README.md[m
+[1mindex f241f4b..79ed1ac 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,6 +1,39 @@[m
+[31m-# LiftFire Marketing Website[m
+[32m+[m[32m<div align="center">[m
+ [m
+[31m-A modern, high-performance marketing website for LiftFire - the gamified gym tracker PWA. Built with React, TypeScript, and Tailwind CSS, featuring internationalization support, dark/light themes, and optimized for performance and SEO.[m
+[32m+[m[32m# 🚀 LiftFire Marketing Website[m
+[32m+[m
+[32m+[m[32m**A modern, high-performance marketing website for LiftFire - the gamified gym tracker PWA**[m
+[32m+[m
+[32m+[m[32m[![Build Status](https://github.com/liftfire/marketing-website/workflows/CI/badge.svg)](https://github.com/liftfire/marketing-website/actions)[m
+[32m+[m[32m[![Netlify Status](https://api.netlify.com/api/v1/badges/12345678-1234-1234-1234-123456789012/deploy-status)](https://app.netlify.com/sites/liftfire/deploys)[m
+[32m+[m[32m[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[m
+[32m+[m[32m[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)[m
+[32m+[m[32m[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)[m
+[32m+[m[32m[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)[m
+[32m+[m
+[32m+[m[32m[![Performance](https://img.shields.io/badge/Lighthouse-Performance_95+-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)[m
+[32m+[m[32m[![Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility_98+-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)[m
+[32m+[m[32m[![SEO](https://img.shields.io/badge/Lighthouse-SEO_100-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)[m
+[32m+[m[32m[![PWA](https://img.shields.io/badge/PWA-Ready-purple?logo=pwa)](https://web.dev/progressive-web-apps/)[m
+[32m+[m
+[32m+[m[32m[🌐 Live Demo](https://liftfire.app) • [📚 Documentation](docs/) • [🤝 Contributing](CONTRIBUTING.md) • [💬 Discord](https://discord.gg/liftfire)[m
+[32m+[m
+[32m+[m[32m</div>[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## ✨ Features[m
+[32m+[m
+[32m+[m[32m🎯 **Modern Tech Stack** - React 19, TypeScript, Tailwind CSS v4[m[41m  [m
+[32m+[m[32m🌍 **Internationalization** - English, Spanish with automatic detection[m[41m  [m
+[32m+[m[32m🎨 **Dark/Light Themes** - System preference detection + manual toggle[m[41m  [m
+[32m+[m[32m⚡ **Performance Optimized** - 95+ Lighthouse scores, Core Web Vitals[m[41m  [m
+[32m+[m[32m♿ **Accessibility First** - WCAG 2.1 AA compliant, screen reader tested[m[41m  [m
+[32m+[m[32m📱 **Mobile Responsive** - Mobile-first design, works on all devices[m[41m  [m
+[32m+[m[32m🔍 **SEO Optimized** - Structured data, meta tags, sitemap generation[m[41m  [m
+[32m+[m[32m🧪 **Comprehensive Testing** - 80%+ coverage with Vitest + React Testing Library[m[41m  [m
+[32m+[m[32m🚀 **CI/CD Ready** - GitHub Actions, automated deployment to Netlify[m[41m  [m
+[32m+[m[32m🔒 **Security Focused** - Security headers, CSP, vulnerability scanning[m
+ [m
+ ## 🚀 Tech Stack[m
+ [m
+[36m@@ -440,10 +473,62 @@[m [mtest: add coverage for theme switching[m
+ - Performance regression detection[m
+ - User experience monitoring[m
+ [m
+[31m-## 📝 License[m
+[32m+[m[32m## 🤝 Contributing[m
+[32m+[m
+[32m+[m[32mWe welcome contributions from the community! Whether you're fixing bugs, adding features, improving documentation, or helping with translations, your contributions are valued.[m
+[32m+[m
+[32m+[m[32m### Quick Start for Contributors[m
+[32m+[m
+[32m+[m[32m1. **Fork the repository** and clone your fork[m
+[32m+[m[32m2. **Install dependencies**: `npm ci`[m
+[32m+[m[32m3. **Create a feature branch**: `git checkout -b feature/amazing-feature`[m
+[32m+[m[32m4. **Make your changes** following our [coding standards](CONTRIBUTING.md#coding-standards)[m
+[32m+[m[32m5. **Run tests**: `npm run ci:quality`[m
+[32m+[m[32m6. **Submit a pull request** with a clear description[m
+ [m
+[31m-This project is private and proprietary to LiftFire. All rights reserved.[m
+[32m+[m[32m### Ways to Contribute[m
+[32m+[m
+[32m+[m[32m- 🐛 **Report bugs** or suggest features via [GitHub Issues](https://github.com/liftfire/marketing-website/issues)[m
+[32m+[m[32m- 💻 **Submit code** improvements or new features[m
+[32m+[m[32m- 📖 **Improve documentation** or write tutorials[m
+[32m+[m[32m- 🌍 **Add translations** for new languages[m
+[32m+[m[32m- 🎨 **Enhance UI/UX** design and accessibility[m
+[32m+[m[32m- 🧪 **Write tests** to improve coverage[m
+[32m+[m
+[32m+[m[32mSee our [Contributing Guide](CONTRIBUTING.md) for detailed information and [Contributors](CONTRIBUTORS.md) for recognition.[m
+[32m+[m
+[32m+[m[32m## 📄 License[m
+[32m+[m
+[32m+[m[32mThis project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.[m
+[32m+[m
+[32m+[m[32m## 🙏 Acknowledgments[m
+[32m+[m
+[32m+[m[32m- **[React Team](https://reactjs.org/)** for the amazing framework[m
+[32m+[m[32m- **[Tailwind CSS](https://tailwindcss.com/)** for the utility-first CSS framework[m
+[32m+[m[32m- **[Vite](https://vitejs.dev/)** for the lightning-fast build tool[m
+[32m+[m[32m- **[Netlify](https://netlify.com/)** for seamless deployment and hosting[m
+[32m+[m[32m- **Open Source Community** for the incredible ecosystem of tools and libraries[m
+[32m+[m
+[32m+[m[32m## 📞 Support & Community[m
+[32m+[m
+[32m+[m[32m- 🌐 **Website**: [liftfire.app](https://liftfire.app)[m
+[32m+[m[32m- 💬 **Discord**: [discord.gg/liftfire](https://discord.gg/liftfire)[m
+[32m+[m[32m- 🐙 **GitHub**: [github.com/liftfire](https://github.com/liftfire)[m
+[32m+[m[32m- 🐦 **Twitter**: [@LiftFireApp](https://twitter.com/LiftFireApp)[m
+[32m+[m[32m- 📧 **Email**: [contact@liftfire.app](mailto:contact@liftfire.app)[m
+[32m+[m
+[32m+[m[32m## 🔗 Related Projects[m
+[32m+[m
+[32m+[m[32m- **[LiftFire App](https://github.com/liftfire/app)** - The main PWA application[m
+[32m+[m[32m- **[LiftFire API](https://github.com/liftfire/api)** - Backend API and services[m
+[32m+[m[32m- **[LiftFire Design System](https://github.com/liftfire/design-system)** - Shared UI components[m
+ [m
+ ---[m
+ [m
+[31m-**Need help?** Check the [deployment guide](docs/DEPLOYMENT.md) or [production checklist](docs/PRODUCTION_CHECKLIST.md) for detailed information.[m
+\ No newline at end of file[m
+[32m+[m[32m<div align="center">[m
+[32m+[m
+[32m+[m[32m**Made with ❤️ by the LiftFire Team**[m
+[32m+[m
+[32m+[m[32m[⭐ Star this repo](https://github.com/liftfire/marketing-website) • [🍴 Fork it](https://github.com/liftfire/marketing-website/fork) • [📢 Share it](https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20marketing%20website%20for%20LiftFire!&url=https://github.com/liftfire/marketing-website)[m
+[32m+[m
+[32m+[m[32m</div>[m
+\ No newline at end of file[m

@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "headline": "Transforma tu Viaje Fitness con LiftFire",
+    "subheadline": "El rastreador de gimnasio gamificado que funciona sin conexión, te conecta con amigos y usa IA para optimizar tus entrenamientos.",
+    "primaryCTA": "Comienza tu Viaje",
+    "secondaryCTA": "Ver Demo",
+    "trustIndicator": "Únete a más de 10,000 entusiastas del fitness",
+    "copy": "Deja de permitir que el WiFi deficiente del gimnasio arruine el seguimiento de tus entrenamientos. LiftFire funciona 100% sin conexión mientras gamifica tu viaje fitness con XP, logros y desafíos sociales. Únete a miles de entusiastas del fitness que han hecho que hacer ejercicio sea adictivo."
+  },
+  "features": {
+    "title": "¿Por qué elegir LiftFire?",
+    "subtitle": "Todo lo que necesitas para una experiencia completa de seguimiento fitness",
+    "offline": {
+      "title": "Nunca Pierdas una Repetición",
+      "description": "¿WiFi deficiente en el gimnasio? No hay problema. LiftFire funciona completamente sin conexión, sincronizando tus datos cuando vuelvas a estar en línea. Tus entrenamientos siempre se registran, sin importar dónde entrenes.",
+      "benefits": [
+        "Funciona en cualquier gimnasio, en cualquier lugar",
+        "Sin preocupaciones por el uso de datos",
+        "Rendimiento ultrarrápido"
+      ]
+    },
+    "gamification": {
+      "title": "Sube de Nivel tus Entrenamientos",
+      "description": "Gana XP por cada entrenamiento, desbloquea logros por hitos y mantén rachas que se adaptan a tu horario. Haz que el fitness sea tan adictivo como tu juego favorito.",
+      "benefits": [
+        "Gana XP por cada entrenamiento",
+        "Desbloquea logros y medallas",
+        "Mantén rachas de entrenamiento"
+      ]
+    },
+    "social": {
+      "title": "Entrena con Amigos",
+      "description": "Conéctate con compañeros de gimnasio, comparte logros y compite en desafíos. Convierte tu viaje fitness en una experiencia social que te mantiene motivado.",
+      "benefits": [
+        "Agrega amigos del gimnasio",
+        "Comparte logros de entrenamiento",
+        "Únete a desafíos comunitarios"
+      ]
+    }
+  },
+  "socialProof": {
+    "title": "Confiado por Entusiastas del Fitness en Todo el Mundo",
+    "stats": {
+      "users": "Más de 10,000 Usuarios Activos",
+      "workouts": "Más de 1M de Entrenamientos Registrados",
+      "satisfaction": "95% de Satisfacción del Usuario",
+      "languages": "Disponible en 12 Idiomas"
+    },
+    "testimonials": {
+      "title": "Lo que Dicen Nuestros Usuarios",
+      "items": [
+        {
+          "quote": "LiftFire cambió completamente cómo me acerco al gimnasio. ¡La función sin conexión es revolucionaria!",
+          "author": "Sarah M.",
+          "role": "Entusiasta del Fitness"
+        },
+        {
+          "quote": "La gamificación me hace volver. ¡Ahora realmente me emociona hacer ejercicio!",
+          "author": "Mike R.",
+          "role": "Entrenador Personal"
+        },
+        {
+          "quote": "Finalmente, una app de fitness que funciona cuando el WiFi del gimnasio no.",
+          "author": "Alex K.",
+          "role": "Powerlifter"
+        }
+      ]
+    }
+  },
+  "demo": {
+    "title": "Ve LiftFire en Acción",
+    "subtitle": "Mira qué fácil es registrar tus entrenamientos y ganar recompensas",
+    "watchButton": "Ver Video Demo",
+    "tryButton": "Pruébalo Ahora"
+  },
+  "finalCTA": {
+    "title": "¿Listo para Transformar tu Viaje Fitness?",
+    "subtitle": "Únete a miles de usuarios que ya han descubierto el poder del seguimiento fitness gamificado.",
+    "primaryButton": "Comienza tu Viaje",
+    "secondaryButton": "Saber Más",
+    "features": [
+      "Gratis para empezar",
+      "No se requiere tarjeta de crédito",
+      "Funciona 100% sin conexión"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "seo": {
+    "title": "Community - Join the LiftFire Fitness Community",
+    "description": "Join the LiftFire community! Connect with fitness enthusiasts, get support, contribute to development, and be part of the future of fitness tracking.",
+    "keywords": "LiftFire community,fitness community,Discord,GitHub,beta testing,fitness support,workout community,open source fitness"
+  },
+  "hero": {
+    "title": "Join the LiftFire Community",
+    "description": "Connect with thousands of fitness enthusiasts, contribute to LiftFire's development, and be part of a community that's transforming how we track and gamify fitness."
+  },
+  "channels": {
+    "title": "Community Channels",
+    "description": "Choose the platform that works best for you to connect, learn, and contribute to the LiftFire ecosystem."
+  },
+  "beta": {
+    "title": "Join Our Beta Program",
+    "description": "Get early access to new features, help shape LiftFire's future, and be among the first to experience cutting-edge fitness tracking innovations.",
+    "joinButton": "Join Beta Program",
+    "learnMore": "Learn More"
+  },
+  "guidelines": {
+    "title": "Community Guidelines",
+    "respectful": {
+      "title": "Be Respectful",
+      "description": "Treat all community members with respect and kindness. We're all here to support each other's fitness journeys."
+    },
+    "helpful": {
+      "title": "Be Helpful",
+      "description": "Share your knowledge, answer questions, and help newcomers feel welcome in our community."
+    },
+    "constructive": {
+      "title": "Be Constructive",
+      "description": "Provide constructive feedback, report bugs responsibly, and contribute positively to discussions."
+    }
+  }
+}

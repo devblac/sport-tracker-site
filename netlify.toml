@@ -1,0 +1,146 @@
+[build]
+  # Build command and output directory
+  command = "npm run build"
+  publish = "dist"
+  
+  # Environment variables for build
+  environment = { NODE_VERSION = "18" }
+
+[build.processing]
+  # Skip Netlify's processing since we handle optimization in CI
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Production site settings
+[context.production]
+  command = "npm run build"
+  
+  [context.production.environment]
+    NODE_ENV = "production"
+    VITE_APP_ENV = "production"
+
+# Preview/staging settings
+[context.deploy-preview]
+  command = "npm run build"
+  
+  [context.deploy-preview.environment]
+    NODE_ENV = "staging"
+    VITE_APP_ENV = "staging"
+
+# Branch-specific settings
+[context.develop]
+  command = "npm run build"
+  
+  [context.develop.environment]
+    NODE_ENV = "development"
+    VITE_APP_ENV = "development"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Performance headers
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Specific caching for HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# API and dynamic content
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Static assets with long cache
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Font files
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Redirects for internationalization
+[[redirects]]
+  from = "/es/*"
+  to = "/es/:splat"
+  status = 200
+  force = false
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Error pages
+[[redirects]]
+  from = "/404"
+  to = "/404.html"
+  status = 404
+
+# Prerender settings for better SEO
+[build.environment]
+  # Enable prerendering for static pages
+  NITRO_PRESET = "netlify"
+
+# Form handling (if contact forms are added)
+[build.processing.forms]
+  # Enable Netlify Forms processing
+  enabled = true
+
+# Functions configuration (for future serverless functions)
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Plugin configuration
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+  
+  [plugins.inputs]
+    baseUrl = "https://liftfire.app"
+    sitemapPath = "/sitemap.xml"
+    ignorePeriod = 0
+    providers = [
+      "google",
+      "bing",
+      "yandex"
+    ]

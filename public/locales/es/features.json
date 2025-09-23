@@ -1,0 +1,146 @@
+{
+  "title": "Características Poderosas para Cada Viaje Fitness",
+  "subtitle": "Descubre todas las herramientas y características que hacen de LiftFire el compañero de gimnasio definitivo",
+  "categories": {
+    "core": "Características Principales",
+    "gamification": "Gamificación",
+    "social": "Características Sociales",
+    "ai": "IA y Análisis",
+    "technical": "Excelencia Técnica"
+  },
+  "core": {
+    "title": "Seguimiento Principal de Entrenamientos",
+    "description": "Todo lo que necesitas para rastrear tus entrenamientos de manera efectiva",
+    "exerciseDatabase": {
+      "title": "Base de Datos de Más de 1000 Ejercicios",
+      "description": "Base de datos completa con instrucciones detalladas, grupos musculares y requisitos de equipo",
+      "status": "completed"
+    },
+    "offlineTracking": {
+      "title": "Funcionalidad 100% Sin Conexión",
+      "description": "Rastrea entrenamientos sin conexión a internet. Los datos se sincronizan automáticamente cuando estés en línea",
+      "status": "completed"
+    },
+    "workoutPlans": {
+      "title": "Planes de Entrenamiento Personalizados",
+      "description": "Crea y sigue rutinas de entrenamiento personalizadas adaptadas a tus objetivos",
+      "status": "in-progress"
+    },
+    "progressTracking": {
+      "title": "Análisis de Progreso",
+      "description": "Gráficos detallados y estadísticas para monitorear tu viaje fitness a lo largo del tiempo",
+      "status": "completed"
+    }
+  },
+  "gamification": {
+    "title": "Sistema de Gamificación",
+    "description": "Convierte tu viaje fitness en un juego atractivo",
+    "xpSystem": {
+      "title": "Sistema de XP y Niveles",
+      "description": "Gana puntos de experiencia por entrenamientos y sube de nivel tu personaje fitness",
+      "status": "completed"
+    },
+    "achievements": {
+      "title": "Logros y Medallas",
+      "description": "Desbloquea medallas especiales por alcanzar hitos y completar desafíos",
+      "status": "completed"
+    },
+    "streaks": {
+      "title": "Rachas de Entrenamiento",
+      "description": "Mantén rachas diarias, semanales y mensuales de entrenamiento para recompensas adicionales",
+      "status": "completed"
+    },
+    "challenges": {
+      "title": "Desafíos Personales",
+      "description": "Establece y completa desafíos fitness personales con recompensas",
+      "status": "in-progress"
+    }
+  },
+  "social": {
+    "title": "Social y Comunidad",
+    "description": "Conéctate con otros entusiastas del fitness",
+    "friends": {
+      "title": "Amigos del Gimnasio",
+      "description": "Agrega amigos, comparte entrenamientos y motívense mutuamente",
+      "status": "in-progress"
+    },
+    "leaderboards": {
+      "title": "Tablas de Clasificación",
+      "description": "Compite con amigos y miembros de la comunidad en varias métricas",
+      "status": "planned"
+    },
+    "sharing": {
+      "title": "Compartir Logros",
+      "description": "Comparte tus logros fitness en plataformas de redes sociales",
+      "status": "planned"
+    },
+    "mentorship": {
+      "title": "Programa de Mentoría",
+      "description": "Conecta usuarios experimentados con principiantes para orientación y apoyo",
+      "status": "planned"
+    }
+  },
+  "ai": {
+    "title": "Perspectivas Impulsadas por IA",
+    "description": "Análisis inteligente y recomendaciones personalizadas",
+    "plateauDetection": {
+      "title": "Detección de Mesetas",
+      "description": "La IA identifica cuando alcanzas mesetas y sugiere ajustes",
+      "status": "planned"
+    },
+    "recommendations": {
+      "title": "Recomendaciones Personalizadas",
+      "description": "Obtén sugerencias de entrenamientos y ejercicios basadas en tu progreso y objetivos",
+      "status": "planned"
+    },
+    "formAnalysis": {
+      "title": "Análisis de Forma",
+      "description": "Verificación de forma impulsada por IA usando la cámara del dispositivo (característica futura)",
+      "status": "planned"
+    },
+    "recovery": {
+      "title": "Optimización de Recuperación",
+      "description": "Recomendaciones inteligentes para días de descanso y actividades de recuperación",
+      "status": "planned"
+    }
+  },
+  "technical": {
+    "title": "Excelencia Técnica",
+    "description": "Construido con tecnología moderna para la mejor experiencia de usuario",
+    "pwa": {
+      "title": "Aplicación Web Progresiva",
+      "description": "Instala en cualquier dispositivo, funciona como una aplicación nativa con capacidades sin conexión",
+      "status": "completed"
+    },
+    "performance": {
+      "title": "Rendimiento Ultrarrápido",
+      "description": "Optimizado para velocidad con tiempos de carga <2s y animaciones suaves",
+      "status": "completed"
+    },
+    "security": {
+      "title": "Privacidad y Seguridad",
+      "description": "Tus datos están encriptados y almacenados de forma segura con control total de privacidad",
+      "status": "completed"
+    },
+    "accessibility": {
+      "title": "Cumplimiento de Accesibilidad",
+      "description": "Cumple con WCAG 2.1 AA para usuarios con discapacidades",
+      "status": "completed"
+    }
+  },
+  "techStack": {
+    "title": "Construido con Tecnología Moderna",
+    "subtitle": "LiftFire usa tecnología de vanguardia para ofrecer la mejor experiencia posible",
+    "frontend": "React 19 + TypeScript",
+    "backend": "Supabase + PostgreSQL",
+    "offline": "IndexedDB + Service Workers",
+    "ui": "Tailwind CSS + Framer Motion",
+    "testing": "Vitest + React Testing Library",
+    "deployment": "Netlify + GitHub Actions"
+  },
+  "comingSoon": {
+    "title": "Próximamente",
+    "subtitle": "Características emocionantes en las que estamos trabajando para futuras versiones",
+    "description": "Constantemente mejoramos LiftFire basándonos en comentarios de usuarios y las últimas tendencias de tecnología fitness."
+  }
+}

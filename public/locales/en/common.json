@@ -1,0 +1,113 @@
+{
+  "navigation": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "roadmap": "Roadmap",
+    "community": "Community",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "startJourney": "Start Your Journey",
+    "watchDemo": "Watch Demo",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "tryFree": "Try Free",
+    "upgrade": "Upgrade",
+    "download": "Download",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "close": "Close",
+    "menu": "Menu",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "labels": {
+    "language": "Language",
+    "theme": "Theme",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "required": "Required",
+    "optional": "Optional",
+    "email": "Email",
+    "name": "Name",
+    "message": "Message",
+    "subject": "Subject",
+    "send": "Send",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm"
+  },
+  "status": {
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "planned": "Planned",
+    "experimental": "Experimental",
+    "available": "Available",
+    "comingSoon": "Coming Soon",
+    "beta": "Beta",
+    "new": "New"
+  },
+  "time": {
+    "month": "month",
+    "months": "months",
+    "year": "year",
+    "years": "years",
+    "day": "day",
+    "days": "days",
+    "hour": "hour",
+    "hours": "hours",
+    "minute": "minute",
+    "minutes": "minutes",
+    "second": "second",
+    "seconds": "seconds",
+    "ago": "ago",
+    "now": "now"
+  },
+  "footer": {
+    "tagline": "Transform your fitness journey with gamified tracking",
+    "product": "Product",
+    "company": "Company",
+    "community": "Community",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "support": "Support",
+    "documentation": "Documentation",
+    "blog": "Blog",
+    "about": "About",
+    "careers": "Careers",
+    "press": "Press",
+    "allRightsReserved": "All rights reserved"
+  },
+  "seo": {
+    "defaultTitle": "LiftFire - Transform Your Fitness Journey",
+    "defaultDescription": "Gamified gym tracker with offline functionality, social features, and AI insights. Track workouts, earn XP, and connect with the fitness community.",
+    "defaultKeywords": "gym tracker,fitness app,workout tracker,gamified fitness,offline gym app,PWA fitness,social fitness,AI fitness,exercise database,workout gamification",
+    "homePage": {
+      "title": "LiftFire - Gamified Gym Tracker with Offline Support",
+      "description": "Transform your fitness journey with LiftFire's gamified gym tracker. Features offline functionality, social challenges, AI insights, and 1000+ exercises. Start free today!"
+    },
+    "featuresPage": {
+      "title": "Features - LiftFire Gym Tracker",
+      "description": "Discover LiftFire's powerful features: offline workout tracking, gamification system, social community, AI insights, and comprehensive exercise database."
+    },
+    "pricingPage": {
+      "title": "Pricing - LiftFire Plans & Features",
+      "description": "Choose your LiftFire plan: Free with basic features, Pro ($9.99/month) with cloud sync and social features, or Elite ($19.99/month) with AI coaching."
+    },
+    "roadmapPage": {
+      "title": "Roadmap - LiftFire Development Timeline",
+      "description": "See what's coming to LiftFire: upcoming features, development milestones, and our long-term vision for the future of fitness tracking."
+    }
+  }
+}

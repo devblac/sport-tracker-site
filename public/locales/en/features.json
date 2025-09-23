@@ -1,0 +1,132 @@
+{
+  "title": "Powerful Features for Every Fitness Journey",
+  "subtitle": "Discover all the tools and features that make LiftFire the ultimate gym companion",
+  "categories": {
+    "core": "Core Features",
+    "gamification": "Gamification",
+    "social": "Social Features",
+    "ai": "AI & Analytics",
+    "technical": "Technical Excellence"
+  },
+  "core": {
+    "title": "Core Workout Tracking",
+    "description": "Everything you need to track your workouts effectively",
+    "exerciseDatabase": {
+      "title": "1000+ Exercises at Your Fingertips",
+      "description": "Access a complete database of exercises with detailed instructions, muscle group targeting, and equipment requirements. From basic movements to advanced techniques, we've got you covered.",
+      "keyPoints": [
+        "Detailed exercise instructions and form tips",
+        "Muscle group visualization",
+        "Equipment and difficulty categorization",
+        "Offline access to entire database"
+      ],
+      "status": "completed"
+    },
+    "offlineTracking": {
+      "title": "Works Everywhere, Syncs Everywhere",
+      "description": "Train in basements, remote gyms, or anywhere with poor connectivity. LiftFire stores everything locally and syncs seamlessly when you're back online.",
+      "keyPoints": [
+        "100% offline functionality",
+        "Automatic background sync",
+        "No data loss, ever",
+        "Works on any device, anywhere"
+      ],
+      "status": "completed"
+    },
+    "workoutPlans": {
+      "title": "Track Every Rep, Set, and Personal Record",
+      "description": "Log your workouts with precision using our intuitive interface. Track weights, reps, rest times, and RPE while our system automatically calculates your progress and personal records.",
+      "keyPoints": [
+        "Real-time workout logging",
+        "Automatic personal record detection",
+        "Rest timer with customizable intervals",
+        "Progress visualization and analytics"
+      ],
+      "status": "in-progress"
+    }
+  },
+  "gamification": {
+    "title": "Gamification System",
+    "description": "Turn your fitness journey into an engaging game",
+    "xpSystem": {
+      "title": "Make Fitness Addictive",
+      "description": "Transform your workouts into an engaging game. Earn XP for every exercise, unlock achievements for milestones, and maintain streaks that adapt to your real-life schedule.",
+      "keyPoints": [
+        "XP system with meaningful progression",
+        "100+ unique achievements to unlock",
+        "Flexible streak system with compensation days",
+        "Seasonal challenges and events"
+      ],
+      "status": "completed"
+    }
+  },
+  "social": {
+    "title": "Social & Community",
+    "description": "Connect with other fitness enthusiasts",
+    "friends": {
+      "title": "Your Gym Community, Digitized",
+      "description": "Connect with workout partners, share achievements, and participate in challenges. Build a supportive community that keeps you motivated and accountable.",
+      "keyPoints": [
+        "Gym friends system",
+        "Activity feeds and workout sharing",
+        "Group challenges and competitions",
+        "Leaderboards and rankings"
+      ],
+      "status": "in-progress"
+    }
+  },
+  "ai": {
+    "title": "AI-Powered Insights",
+    "description": "Smart analytics and personalized recommendations",
+    "aiTrainer": {
+      "title": "Your Personal AI Trainer",
+      "description": "Get personalized workout recommendations, plateau detection, and form analysis. Our AI learns from your progress to provide insights that help you train smarter, not just harder.",
+      "keyPoints": [
+        "Personalized workout recommendations",
+        "Plateau detection and breakthrough strategies",
+        "Progress prediction and goal optimization",
+        "Form analysis using device camera (coming soon)"
+      ],
+      "status": "planned"
+    }
+  },
+  "technical": {
+    "title": "Technical Excellence",
+    "description": "Built with modern technology for the best user experience",
+    "pwa": {
+      "title": "Progressive Web App",
+      "description": "Install on any device, works like a native app with offline capabilities",
+      "status": "completed"
+    },
+    "performance": {
+      "title": "Lightning Fast Performance",
+      "description": "Optimized for speed with <2s load times and smooth animations",
+      "status": "completed"
+    },
+    "security": {
+      "title": "Privacy & Security",
+      "description": "Your data is encrypted and stored securely with full privacy control",
+      "status": "completed"
+    },
+    "accessibility": {
+      "title": "Accessibility Compliant",
+      "description": "WCAG 2.1 AA compliant for users with disabilities",
+      "status": "completed"
+    }
+  },
+  "techStack": {
+    "title": "Built with Modern Technology",
+    "subtitle": "LiftFire uses cutting-edge technology to deliver the best possible experience",
+    "frontend": "React 19 + TypeScript",
+    "backend": "Supabase + PostgreSQL",
+    "offline": "IndexedDB + Service Workers",
+    "ui": "Tailwind CSS + Framer Motion",
+    "testing": "Vitest + React Testing Library",
+    "deployment": "Netlify + GitHub Actions"
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "subtitle": "Exciting features we're working on for future releases",
+    "description": "We're constantly improving LiftFire based on user feedback and the latest fitness technology trends."
+  }
+}

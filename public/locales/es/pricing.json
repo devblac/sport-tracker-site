@@ -1,0 +1,166 @@
+{
+  "title": "Elige Tu Plan de Fitness",
+  "subtitle": "Comienza gratis y actualiza cuando estés listo para desbloquear funciones avanzadas",
+  "plans": {
+    "mostPopular": "Más Popular",
+    "free": {
+      "name": "Gratis",
+      "price": "$0",
+      "period": "para siempre",
+      "description": "Perfecto para comenzar con seguimiento básico de entrenamientos",
+      "popular": false,
+      "features": {
+        "exerciseDatabase": "Acceso a más de 1000 ejercicios",
+        "offlineTracking": "Seguimiento 100% sin conexión",
+        "basicGameification": "Sistema básico de XP y niveles",
+        "localStorage": "Almacenamiento local de datos",
+        "progressCharts": "Gráficos básicos de progreso",
+        "workoutHistory": "Historial de entrenamientos",
+        "customWorkouts": "Crear entrenamientos personalizados",
+        "basicAchievements": "Sistema básico de logros"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9.99",
+      "period": "por mes",
+      "description": "Funciones mejoradas para entusiastas serios del fitness",
+      "popular": true,
+      "features": {
+        "allFreeFeatures": "Todo lo de Gratis",
+        "cloudSync": "Respaldo y sincronización en la nube",
+        "advancedGameification": "Sistema avanzado de gamificación",
+        "socialFeatures": "Amigos y compartir social",
+        "aiRecommendations": "Recomendaciones de entrenamiento con IA",
+        "advancedAnalytics": "Análisis detallado de progreso",
+        "customChallenges": "Crear desafíos personalizados",
+        "prioritySupport": "Soporte prioritario al cliente",
+        "exportData": "Exportar datos de entrenamiento",
+        "multiDevice": "Sincronizar en dispositivos ilimitados"
+      }
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "$19.99",
+      "period": "por mes",
+      "description": "Experiencia premium con funciones de entrenador personal",
+      "popular": false,
+      "features": {
+        "allProFeatures": "Todo lo de Pro",
+        "personalTrainer": "Acceso a entrenador personal",
+        "customWorkoutPlans": "Creación de planes de entrenamiento personalizados",
+        "advancedAI": "Entrenamiento avanzado con IA",
+        "formAnalysis": "Análisis de forma con IA (próximamente)",
+        "nutritionTracking": "Integración de seguimiento nutricional",
+        "recoveryOptimization": "Optimización de recuperación",
+        "mentorshipProgram": "Acceso al programa de mentoría",
+        "earlyAccess": "Acceso temprano a nuevas funciones",
+        "whiteGlove": "Incorporación personalizada"
+      }
+    }
+  },
+  "features": {
+    "included": "Incluido",
+    "notIncluded": "No incluido",
+    "comingSoon": "Próximamente"
+  },
+  "cta": {
+    "startFree": "Comenzar Gratis",
+    "choosePro": "Elegir Pro",
+    "chooseElite": "Elegir Elite",
+    "currentPlan": "Plan Actual",
+    "upgrade": "Actualizar",
+    "downgrade": "Degradar"
+  },
+  "billing": {
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "save": "Ahorra 20%"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "whatIncluded": {
+        "question": "¿Qué incluye el plan gratuito?",
+        "answer": "El plan gratuito incluye acceso a nuestra base de datos completa de ejercicios, seguimiento de entrenamientos sin conexión, funciones básicas de gamificación y almacenamiento local de datos. Es perfecto para comenzar con LiftFire."
+      },
+      "upgradeAnytime": {
+        "question": "¿Puedo actualizar o degradar en cualquier momento?",
+        "answer": "¡Sí! Puedes actualizar o degradar tu plan en cualquier momento. Los cambios toman efecto inmediatamente, y se te cobrará o acreditará proporcionalmente."
+      },
+      "dataSync": {
+        "question": "¿Cómo funciona la sincronización en la nube?",
+        "answer": "Con los planes Pro y Elite, tus datos de entrenamiento se sincronizan automáticamente en todos tus dispositivos. Puedes comenzar un entrenamiento en tu teléfono y terminarlo en tu tablet sin problemas."
+      },
+      "studentDiscount": {
+        "question": "¿Ofrecen descuentos estudiantiles?",
+        "answer": "¡Sí! Los estudiantes obtienen 50% de descuento en los planes Pro y Elite. Contáctanos en support@liftfire.app con tu identificación estudiantil para verificación."
+      },
+      "cancelAnytime": {
+        "question": "¿Puedo cancelar en cualquier momento?",
+        "answer": "Absolutamente. Puedes cancelar tu suscripción en cualquier momento. Continuarás teniendo acceso a las funciones premium hasta el final de tu período de facturación."
+      },
+      "offlineWork": {
+        "question": "¿LiftFire funciona sin conexión?",
+        "answer": "¡Sí! LiftFire funciona 100% sin conexión en todos los planes. Tus entrenamientos se guardan localmente y se sincronizan automáticamente cuando vuelves a estar en línea."
+      }
+    }
+  },
+  "guarantee": {
+    "title": "Garantía de Devolución de 30 Días",
+    "description": "Prueba LiftFire sin riesgo. Si no estás completamente satisfecho, te devolvemos tu dinero dentro de 30 días."
+  },
+  "contact": {
+    "title": "¿Necesitas Ayuda para Elegir?",
+    "description": "Nuestro equipo está aquí para ayudarte a encontrar el plan perfecto para tus objetivos de fitness.",
+    "email": "support@liftfire.app",
+    "discord": "Únete a nuestra comunidad de Discord"
+  },
+  "upgrade": {
+    "title": "¿Listo para Potenciar tus Entrenamientos?",
+    "description": "Únete a miles de entusiastas del fitness que han transformado su entrenamiento con las funciones avanzadas de LiftFire. Comienza con nuestro plan gratuito o salta directamente a Pro para la experiencia completa.",
+    "startWithPro": "Comenzar con Pro",
+    "tryFreeFirst": "Probar Gratis Primero"
+  },
+  "finalCta": {
+    "title": "Comienza tu Transformación Fitness Hoy",
+    "description": "No esperes para lograr tus objetivos de fitness. Únete a la comunidad LiftFire y experimenta el futuro del seguimiento de entrenamientos.",
+    "startFree": "Comenzar Gratis Ahora",
+    "upgradeToPro": "Actualizar a Pro"
+  },
+  "comparison": {
+    "title": "Compara Todas las Funciones",
+    "subtitle": "Ve exactamente qué está incluido en cada plan con nuestra comparación detallada de funciones",
+    "feature": "Función",
+    "pricing": "Precios",
+    "getStarted": "Comenzar",
+    "features": {
+      "exerciseDatabase": "Acceso a más de 1000 ejercicios",
+      "offlineTracking": "Seguimiento 100% sin conexión",
+      "basicGameification": "Sistema básico de XP y niveles",
+      "localStorage": "Almacenamiento local de datos",
+      "progressCharts": "Gráficos básicos de progreso",
+      "workoutHistory": "Historial de entrenamientos",
+      "customWorkouts": "Crear entrenamientos personalizados",
+      "basicAchievements": "Sistema básico de logros",
+      "cloudSync": "Respaldo y sincronización en la nube",
+      "advancedGameification": "Sistema avanzado de gamificación",
+      "socialFeatures": "Amigos y compartir social",
+      "aiRecommendations": "Recomendaciones de entrenamiento con IA",
+      "advancedAnalytics": "Análisis detallado de progreso",
+      "customChallenges": "Crear desafíos personalizados",
+      "prioritySupport": "Soporte prioritario al cliente",
+      "exportData": "Exportar datos de entrenamiento",
+      "multiDevice": "Sincronizar en dispositivos ilimitados",
+      "personalTrainer": "Acceso a entrenador personal",
+      "customWorkoutPlans": "Creación de planes de entrenamiento personalizados",
+      "advancedAI": "Entrenamiento avanzado con IA",
+      "formAnalysis": "Análisis de forma con IA (próximamente)",
+      "nutritionTracking": "Integración de seguimiento nutricional",
+      "recoveryOptimization": "Optimización de recuperación",
+      "mentorshipProgram": "Acceso al programa de mentoría",
+      "earlyAccess": "Acceso temprano a nuevas funciones",
+      "whiteGlove": "Incorporación personalizada"
+    }
+  }
+}

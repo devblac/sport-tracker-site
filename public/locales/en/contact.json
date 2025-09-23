@@ -1,0 +1,40 @@
+{
+  "seo": {
+    "title": "Contact Us - Get Support & Connect with LiftFire",
+    "description": "Contact LiftFire for support, partnerships, press inquiries, or feedback. Multiple ways to reach us including email, Discord, and GitHub.",
+    "keywords": "contact LiftFire,support,help,partnerships,press,feedback,bug reports,feature requests"
+  },
+  "hero": {
+    "title": "Get in Touch",
+    "description": "Have questions, feedback, or need support? We're here to help! Choose the best way to reach us based on your needs."
+  },
+  "methods": {
+    "title": "Contact Methods",
+    "description": "Select the most appropriate channel for your inquiry to ensure you get the fastest and most relevant response."
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "description": "Fill out the form below and we'll get back to you as soon as possible.",
+    "name": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "category": "Category",
+    "subject": "Subject",
+    "subjectPlaceholder": "Brief description of your inquiry",
+    "message": "Message",
+    "messagePlaceholder": "Provide details about your inquiry, question, or feedback...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
+    "errorMessage": "Sorry, there was an error sending your message. Please try again or contact us directly at support@liftfire.app.",
+    "categories": {
+      "general": "General Support",
+      "technical": "Technical Support",
+      "billing": "Billing & Subscriptions",
+      "partnerships": "Partnerships",
+      "press": "Press & Media",
+      "feedback": "Feedback & Suggestions"
+    }
+  }
+}

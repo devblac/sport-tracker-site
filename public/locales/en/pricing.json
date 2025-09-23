@@ -1,0 +1,171 @@
+{
+  "title": "Choose Your Fitness Plan",
+  "subtitle": "Start free and upgrade when you're ready to unlock advanced features",
+  "plans": {
+    "mostPopular": "Most Popular",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "description": "Perfect for trying out LiftFire and basic workout tracking.",
+      "popular": false,
+      "features": {
+        "exerciseDatabase": "Complete exercise database (1000+ exercises)",
+        "offlineTracking": "100% offline workout tracking",
+        "basicGameification": "Basic gamification (XP and levels)",
+        "localStorage": "Personal progress tracking",
+        "progressCharts": "Local data storage",
+        "workoutHistory": "Workout history tracking",
+        "customWorkouts": "Create custom workouts",
+        "basicAchievements": "Basic achievement system"
+      },
+      "limitations": {
+        "noCloudSync": "No cloud sync across devices",
+        "noAdvancedAI": "No advanced AI features",
+        "noSocialFeatures": "No premium social features"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9.99",
+      "period": "per month",
+      "description": "For serious fitness enthusiasts who want advanced features and cloud sync.",
+      "popular": true,
+      "features": {
+        "allFreeFeatures": "Everything in Free",
+        "cloudSync": "Cloud sync across all devices",
+        "advancedGameification": "Advanced gamification (achievements, streaks)",
+        "socialFeatures": "Social features (gym friends, challenges)",
+        "aiRecommendations": "AI workout recommendations",
+        "advancedAnalytics": "Advanced analytics and insights",
+        "customChallenges": "Priority customer support",
+        "prioritySupport": "Early access to new features",
+        "exportData": "Export workout data",
+        "multiDevice": "Sync across unlimited devices"
+      }
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "$19.99",
+      "period": "per month",
+      "description": "For fitness professionals and serious athletes who need the ultimate tools.",
+      "popular": false,
+      "features": {
+        "allProFeatures": "Everything in Pro",
+        "personalTrainer": "Personal trainer marketplace access",
+        "customWorkoutPlans": "Custom workout plan creation",
+        "advancedAI": "Advanced AI coaching features",
+        "formAnalysis": "Form analysis and feedback",
+        "nutritionTracking": "Nutrition integration",
+        "recoveryOptimization": "White-label options for trainers",
+        "mentorshipProgram": "Advanced client management tools",
+        "earlyAccess": "Early access to new features",
+        "whiteGlove": "White-glove onboarding"
+      }
+    }
+  },
+  "features": {
+    "included": "Included",
+    "notIncluded": "Not included",
+    "comingSoon": "Coming soon"
+  },
+  "cta": {
+    "startFree": "Start Free",
+    "choosePro": "Choose Pro",
+    "chooseElite": "Choose Elite",
+    "currentPlan": "Current Plan",
+    "upgrade": "Upgrade",
+    "downgrade": "Downgrade"
+  },
+  "billing": {
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "whatIncluded": {
+        "question": "What's included in the free plan?",
+        "answer": "The free plan includes access to our complete exercise database, offline workout tracking, basic gamification features, and local data storage. It's perfect for getting started with LiftFire."
+      },
+      "upgradeAnytime": {
+        "question": "Can I upgrade or downgrade anytime?",
+        "answer": "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and you'll be charged or credited proportionally."
+      },
+      "dataSync": {
+        "question": "How does cloud sync work?",
+        "answer": "With Pro and Elite plans, your workout data automatically syncs across all your devices. You can start a workout on your phone and finish it on your tablet seamlessly."
+      },
+      "studentDiscount": {
+        "question": "Do you offer student discounts?",
+        "answer": "Yes! Students get 50% off Pro and Elite plans. Contact us at support@liftfire.app with your student ID for verification."
+      },
+      "cancelAnytime": {
+        "question": "Can I cancel anytime?",
+        "answer": "Absolutely. You can cancel your subscription at any time. You'll continue to have access to premium features until the end of your billing period."
+      },
+      "offlineWork": {
+        "question": "Does LiftFire work offline?",
+        "answer": "Yes! LiftFire works 100% offline on all plans. Your workouts are saved locally and sync automatically when you're back online."
+      }
+    }
+  },
+  "guarantee": {
+    "title": "30-Day Money-Back Guarantee",
+    "description": "Try LiftFire risk-free. If you're not completely satisfied, we'll refund your money within 30 days."
+  },
+  "contact": {
+    "title": "Need Help Choosing?",
+    "description": "Our team is here to help you find the perfect plan for your fitness goals.",
+    "email": "support@liftfire.app",
+    "discord": "Join our Discord community"
+  },
+  "upgrade": {
+    "title": "Ready to Supercharge Your Workouts?",
+    "description": "Join thousands of fitness enthusiasts who have transformed their training with LiftFire's advanced features. Start with our free plan or jump straight to Pro for the full experience.",
+    "startWithPro": "Start with Pro",
+    "tryFreeFirst": "Try Free First"
+  },
+  "finalCta": {
+    "title": "Start Your Fitness Transformation Today",
+    "description": "Don't wait to achieve your fitness goals. Join the LiftFire community and experience the future of workout tracking.",
+    "startFree": "Start Free Now",
+    "upgradeToPro": "Upgrade to Pro"
+  },
+  "comparison": {
+    "title": "Compare All Features",
+    "subtitle": "See exactly what's included in each plan with our detailed feature comparison",
+    "feature": "Feature",
+    "pricing": "Pricing",
+    "getStarted": "Get Started",
+    "features": {
+      "exerciseDatabase": "Access to 1000+ exercises",
+      "offlineTracking": "100% offline workout tracking",
+      "basicGameification": "Basic XP and leveling system",
+      "localStorage": "Local data storage",
+      "progressCharts": "Basic progress charts",
+      "workoutHistory": "Workout history tracking",
+      "customWorkouts": "Create custom workouts",
+      "basicAchievements": "Basic achievement system",
+      "cloudSync": "Cloud backup and sync",
+      "advancedGameification": "Advanced gamification system",
+      "socialFeatures": "Friends and social sharing",
+      "aiRecommendations": "AI-powered workout recommendations",
+      "advancedAnalytics": "Detailed progress analytics",
+      "customChallenges": "Create custom challenges",
+      "prioritySupport": "Priority customer support",
+      "exportData": "Export workout data",
+      "multiDevice": "Sync across unlimited devices",
+      "personalTrainer": "Personal trainer access",
+      "customWorkoutPlans": "Custom workout plan creation",
+      "advancedAI": "Advanced AI coaching",
+      "formAnalysis": "AI form analysis (coming soon)",
+      "nutritionTracking": "Nutrition tracking integration",
+      "recoveryOptimization": "Recovery optimization",
+      "mentorshipProgram": "Access to mentorship program",
+      "earlyAccess": "Early access to new features",
+      "whiteGlove": "White-glove onboarding"
+    }
+  }
+}

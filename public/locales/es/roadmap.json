@@ -1,0 +1,170 @@
+{
+  "title": "Hoja de Ruta de Desarrollo de LiftFire",
+  "subtitle": "Nuestro viaje para construir la experiencia definitiva de seguimiento fitness",
+  "intro": {
+    "title": "Construyendo el Futuro del Seguimiento Fitness",
+    "description": "Estamos comprometidos con la mejora continua e innovación. Aquí está lo que hemos logrado y lo que viene después.",
+    "philosophy": "Nuestra filosofía de desarrollo se enfoca en comentarios de usuarios, excelencia técnica y características significativas que realmente mejoran tu viaje fitness."
+  },
+  "quarters": {
+    "q4-2023": {
+      "title": "Q4 2023 - Fundación",
+      "theme": "Infraestructura Principal y MVP",
+      "status": "completed",
+      "description": "Estableciendo la base con características esenciales de seguimiento de entrenamientos",
+      "features": [
+        "Sistema básico de seguimiento de entrenamientos",
+        "Base de datos de ejercicios (500+ ejercicios)",
+        "Funcionalidad sin conexión con IndexedDB",
+        "Implementación PWA",
+        "Diseño básico UI/UX",
+        "Sistema de autenticación de usuarios"
+      ],
+      "successMetrics": [
+        "Funcionalidad 100% sin conexión lograda",
+        "Tiempos de carga sub-2s",
+        "PWA instalable en todos los dispositivos",
+        "500+ ejercicios en la base de datos"
+      ]
+    },
+    "q1-2024": {
+      "title": "Q1 2024 - Gamificación",
+      "theme": "Sistema XP y Compromiso del Usuario",
+      "status": "completed",
+      "description": "Agregando elementos de gamificación para hacer el seguimiento fitness más atractivo",
+      "features": [
+        "Sistema de XP y niveles",
+        "Medallas de logros",
+        "Rachas de entrenamiento",
+        "Visualización de progreso",
+        "Base de datos de ejercicios mejorada (1000+ ejercicios)",
+        "Creación de entrenamientos personalizados"
+      ],
+      "successMetrics": [
+        "40% de aumento en retención de usuarios",
+        "Promedio de rachas de entrenamiento de 5 días",
+        "1000+ ejercicios disponibles",
+        "95% de satisfacción del usuario con gamificación"
+      ]
+    },
+    "q2-2024": {
+      "title": "Q2 2024 - Características Sociales",
+      "theme": "Comunidad y Compartir",
+      "status": "in-progress",
+      "description": "Construyendo características comunitarias para conectar entusiastas del fitness",
+      "features": [
+        "Sistema de amigos y conexiones sociales",
+        "Compartir entrenamientos y logros",
+        "Desafíos comunitarios",
+        "Tablas de clasificación y competencias",
+        "Integración con redes sociales",
+        "Seguimiento de entrenamientos grupales"
+      ],
+      "successMetrics": [
+        "50% de usuarios agregan al menos un amigo",
+        "30% de aumento en frecuencia de entrenamientos",
+        "1000+ desafíos comunitarios completados",
+        "Compartir social aumenta en 200%"
+      ]
+    },
+    "q3-2024": {
+      "title": "Q3 2024 - Integración de IA",
+      "theme": "Recomendaciones Inteligentes y Análisis",
+      "status": "planned",
+      "description": "Introduciendo características impulsadas por IA para orientación fitness personalizada",
+      "features": [
+        "Recomendaciones de entrenamientos de IA",
+        "Detección de mesetas y sugerencias",
+        "Planes de entrenamiento personalizados",
+        "Optimización de recuperación",
+        "Panel de análisis avanzados",
+        "Modelado predictivo de progreso"
+      ],
+      "successMetrics": [
+        "85% de precisión en detección de mesetas",
+        "60% de usuarios siguen recomendaciones de IA",
+        "25% de mejora en progreso del usuario",
+        "Análisis avanzados usados por 70% de usuarios Pro"
+      ]
+    },
+    "q4-2024": {
+      "title": "Q4 2024 - Características Avanzadas",
+      "theme": "Experiencia Premium y Coaching",
+      "status": "planned",
+      "description": "Características premium para entusiastas del fitness serios y profesionales",
+      "features": [
+        "Integración de entrenador personal",
+        "Análisis de forma avanzado (basado en cámara)",
+        "Integración de seguimiento nutricional",
+        "Sincronización de dispositivos wearables",
+        "Reportes avanzados y exportaciones",
+        "API para integraciones de terceros"
+      ],
+      "successMetrics": [
+        "500+ entrenadores certificados en la plataforma",
+        "Precisión de análisis de forma >90%",
+        "Integración con 10+ dispositivos wearables",
+        "50% de usuarios Elite usan características de entrenador"
+      ]
+    }
+  },
+  "longTerm": {
+    "title": "Visión 2025+",
+    "subtitle": "El Futuro de la Tecnología Fitness",
+    "description": "Nuestra visión a largo plazo se extiende más allá del simple seguimiento de entrenamientos para crear un ecosistema fitness integral.",
+    "goals": [
+      {
+        "title": "Coach de Fitness IA",
+        "description": "IA avanzada que entiende tus objetivos, preferencias y progreso para proporcionar coaching personalizado",
+        "timeline": "2025 H1"
+      },
+      {
+        "title": "Integración de Realidad Virtual",
+        "description": "Experiencias de entrenamiento VR y análisis de forma para entrenamiento fitness inmersivo",
+        "timeline": "2025 H2"
+      },
+      {
+        "title": "Ecosistema de Salud",
+        "description": "Integración con proveedores de salud, nutricionistas y profesionales del bienestar",
+        "timeline": "2025-2026"
+      },
+      {
+        "title": "Comunidad Fitness Global",
+        "description": "Desafíos mundiales, competencias y eventos fitness a través de la plataforma",
+        "timeline": "2026+"
+      }
+    ]
+  },
+  "community": {
+    "title": "Aporte de la Comunidad",
+    "subtitle": "Tu Voz Forma Nuestra Hoja de Ruta",
+    "description": "Escuchamos activamente a nuestra comunidad e incorporamos comentarios de usuarios en nuestras prioridades de desarrollo.",
+    "ways": [
+      "Sistema de votación de solicitudes de características",
+      "Encuestas comunitarias mensuales",
+      "Programas de pruebas beta",
+      "Discusiones de la comunidad Discord",
+      "Sesiones de entrevistas de usuarios"
+    ],
+    "cta": {
+      "title": "¿Tienes una Idea de Característica?",
+      "description": "¡Únete a nuestra comunidad Discord o envíanos tus sugerencias por email. Las mejores ideas a menudo vienen de nuestros usuarios!",
+      "discord": "Unirse a Discord",
+      "email": "Enviar Comentarios"
+    }
+  },
+  "updates": {
+    "title": "Mantente Actualizado",
+    "subtitle": "Nunca te pierdas actualizaciones importantes y nuevos lanzamientos de características",
+    "newsletter": {
+      "title": "Boletín de Desarrollo",
+      "description": "Actualizaciones mensuales sobre progreso de desarrollo, nuevas características y destacados de la comunidad",
+      "cta": "Suscribirse a Actualizaciones"
+    },
+    "social": {
+      "title": "Sigue Nuestro Viaje",
+      "description": "Obtén actualizaciones en tiempo real y contenido detrás de escenas en nuestros canales de redes sociales",
+      "platforms": ["Twitter", "Instagram", "LinkedIn", "YouTube"]
+    }
+  }
+}

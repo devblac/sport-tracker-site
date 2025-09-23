@@ -1,0 +1,113 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "features": "Características",
+    "pricing": "Precios",
+    "roadmap": "Hoja de Ruta",
+    "community": "Comunidad",
+    "contact": "Contacto"
+  },
+  "buttons": {
+    "startJourney": "Comienza tu Viaje",
+    "watchDemo": "Ver Demo",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "tryFree": "Prueba Gratis",
+    "upgrade": "Actualizar",
+    "download": "Descargar",
+    "viewAll": "Ver Todo",
+    "readMore": "Leer Más",
+    "close": "Cerrar",
+    "menu": "Menú",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior"
+  },
+  "labels": {
+    "language": "Idioma",
+    "theme": "Tema",
+    "lightMode": "Modo Claro",
+    "darkMode": "Modo Oscuro",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información",
+    "required": "Requerido",
+    "optional": "Opcional",
+    "email": "Correo Electrónico",
+    "name": "Nombre",
+    "message": "Mensaje",
+    "subject": "Asunto",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar"
+  },
+  "status": {
+    "completed": "Completado",
+    "inProgress": "En Progreso",
+    "planned": "Planificado",
+    "experimental": "Experimental",
+    "available": "Disponible",
+    "comingSoon": "Próximamente",
+    "beta": "Beta",
+    "new": "Nuevo"
+  },
+  "time": {
+    "month": "mes",
+    "months": "meses",
+    "year": "año",
+    "years": "años",
+    "day": "día",
+    "days": "días",
+    "hour": "hora",
+    "hours": "horas",
+    "minute": "minuto",
+    "minutes": "minutos",
+    "second": "segundo",
+    "seconds": "segundos",
+    "ago": "hace",
+    "now": "ahora"
+  },
+  "footer": {
+    "tagline": "Transforma tu viaje fitness con seguimiento gamificado",
+    "product": "Producto",
+    "company": "Empresa",
+    "community": "Comunidad",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "support": "Soporte",
+    "documentation": "Documentación",
+    "blog": "Blog",
+    "about": "Acerca de",
+    "careers": "Carreras",
+    "press": "Prensa",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "seo": {
+    "defaultTitle": "LiftFire - Transforma tu Viaje Fitness",
+    "defaultDescription": "Rastreador de gimnasio gamificado con funcionalidad offline, características sociales e insights de IA. Rastrea entrenamientos, gana XP y conéctate con la comunidad fitness.",
+    "defaultKeywords": "rastreador gimnasio,app fitness,rastreador entrenamientos,fitness gamificado,app gimnasio offline,PWA fitness,fitness social,IA fitness,base datos ejercicios,gamificación entrenamientos",
+    "homePage": {
+      "title": "LiftFire - Rastreador de Gimnasio Gamificado con Soporte Offline",
+      "description": "Transforma tu viaje fitness con el rastreador de gimnasio gamificado de LiftFire. Funcionalidad offline, desafíos sociales, insights de IA y más de 1000 ejercicios. ¡Comienza gratis hoy!"
+    },
+    "featuresPage": {
+      "title": "Características - Rastreador de Gimnasio LiftFire",
+      "description": "Descubre las poderosas características de LiftFire: seguimiento offline de entrenamientos, sistema de gamificación, comunidad social, insights de IA y base de datos completa de ejercicios."
+    },
+    "pricingPage": {
+      "title": "Precios - Planes y Características de LiftFire",
+      "description": "Elige tu plan de LiftFire: Gratis con características básicas, Pro ($9.99/mes) con sincronización en la nube y características sociales, o Elite ($19.99/mes) con coaching de IA."
+    },
+    "roadmapPage": {
+      "title": "Hoja de Ruta - Cronología de Desarrollo de LiftFire",
+      "description": "Ve lo que viene a LiftFire: próximas características, hitos de desarrollo y nuestra visión a largo plazo para el futuro del seguimiento fitness."
+    }
+  }
+}

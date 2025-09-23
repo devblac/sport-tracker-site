@@ -1,0 +1,40 @@
+{
+  "seo": {
+    "title": "Contáctanos - Obtén Soporte y Conéctate con LiftFire",
+    "description": "Contacta a LiftFire para soporte, asociaciones, consultas de prensa o comentarios. Múltiples formas de contactarnos incluyendo email, Discord y GitHub.",
+    "keywords": "contactar LiftFire,soporte,ayuda,asociaciones,prensa,comentarios,reportes errores,solicitudes características"
+  },
+  "hero": {
+    "title": "Ponte en Contacto",
+    "description": "¿Tienes preguntas, comentarios o necesitas soporte? ¡Estamos aquí para ayudar! Elige la mejor forma de contactarnos según tus necesidades."
+  },
+  "methods": {
+    "title": "Métodos de Contacto",
+    "description": "Selecciona el canal más apropiado para tu consulta para asegurar que obtengas la respuesta más rápida y relevante."
+  },
+  "form": {
+    "title": "Envíanos un Mensaje",
+    "description": "Completa el formulario a continuación y te responderemos lo antes posible.",
+    "name": "Nombre Completo",
+    "namePlaceholder": "Ingresa tu nombre completo",
+    "email": "Dirección de Correo",
+    "emailPlaceholder": "Ingresa tu dirección de correo",
+    "category": "Categoría",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Descripción breve de tu consulta",
+    "message": "Mensaje",
+    "messagePlaceholder": "Proporciona detalles sobre tu consulta, pregunta o comentario...",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "successMessage": "¡Gracias por tu mensaje! Te responderemos dentro de 24 horas.",
+    "errorMessage": "Lo sentimos, hubo un error enviando tu mensaje. Por favor intenta de nuevo o contáctanos directamente en support@liftfire.app.",
+    "categories": {
+      "general": "Soporte General",
+      "technical": "Soporte Técnico",
+      "billing": "Facturación y Suscripciones",
+      "partnerships": "Asociaciones",
+      "press": "Prensa y Medios",
+      "feedback": "Comentarios y Sugerencias"
+    }
+  }
+}

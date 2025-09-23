@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://liftfire.app</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/es</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/features</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/features" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/features" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/es/features</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.81</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/features" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/features" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/pricing</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/pricing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/pricing" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/es/pricing</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7200000000000001</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/pricing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/pricing" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/roadmap</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/roadmap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/roadmap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/roadmap" />
+  </url>
+  <url>
+    <loc>https://liftfire.app/es/roadmap</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.63</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://liftfire.app/roadmap" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://liftfire.app/es/roadmap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://liftfire.app/roadmap" />
+  </url>
+</urlset>
