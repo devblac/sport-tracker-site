@@ -1,15 +1,23 @@
 import React from 'react';
-import { Zap, Shield, Trophy, Users, Smartphone, Brain, Heart } from 'lucide-react';
+import {
+  Zap,
+  Shield,
+  Trophy,
+  Users,
+  Smartphone,
+  Brain,
+  Heart,
+} from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Typography } from '../ui/Typography';
 
 export const FeatureShowcase: React.FC = () => {
-
   const features = [
     {
       icon: Zap,
       title: '100% Offline First',
-      description: 'Track workouts anywhere, even without internet. Your data syncs automatically when connected.',
+      description:
+        'Track workouts anywhere, even without internet. Your data syncs automatically when connected.',
       gradient: 'from-yellow-400 to-orange-500',
       bgGradient: 'from-yellow-500/10 to-orange-500/10',
       delay: '0s',
@@ -17,7 +25,8 @@ export const FeatureShowcase: React.FC = () => {
     {
       icon: Trophy,
       title: 'Gamified Experience',
-      description: 'Earn XP, unlock achievements, and compete with friends. Make fitness fun and addictive.',
+      description:
+        'Earn XP, unlock achievements, and compete with friends. Make fitness fun and addictive.',
       gradient: 'from-purple-400 to-pink-500',
       bgGradient: 'from-purple-500/10 to-pink-500/10',
       delay: '0.2s',
@@ -25,7 +34,8 @@ export const FeatureShowcase: React.FC = () => {
     {
       icon: Users,
       title: 'Social Workouts',
-      description: 'Connect with gym buddies, join challenges, and share your progress with a supportive community.',
+      description:
+        'Connect with gym buddies, join challenges, and share your progress with a supportive community.',
       gradient: 'from-blue-400 to-cyan-500',
       bgGradient: 'from-blue-500/10 to-cyan-500/10',
       delay: '0.4s',
@@ -33,7 +43,8 @@ export const FeatureShowcase: React.FC = () => {
     {
       icon: Brain,
       title: 'AI-Powered Insights',
-      description: 'Get personalized recommendations, plateau detection, and form analysis powered by AI.',
+      description:
+        'Get personalized recommendations, plateau detection, and form analysis powered by AI.',
       gradient: 'from-green-400 to-emerald-500',
       bgGradient: 'from-green-500/10 to-emerald-500/10',
       delay: '0.6s',
@@ -41,7 +52,8 @@ export const FeatureShowcase: React.FC = () => {
     {
       icon: Shield,
       title: 'Privacy First',
-      description: 'Your data stays yours. End-to-end encryption and local storage ensure complete privacy.',
+      description:
+        'Your data stays yours. End-to-end encryption and local storage ensure complete privacy.',
       gradient: 'from-indigo-400 to-purple-500',
       bgGradient: 'from-indigo-500/10 to-purple-500/10',
       delay: '0.8s',
@@ -49,7 +61,8 @@ export const FeatureShowcase: React.FC = () => {
     {
       icon: Smartphone,
       title: 'Progressive Web App',
-      description: 'Install on any device. Works like a native app with offline capabilities and push notifications.',
+      description:
+        'Install on any device. Works like a native app with offline capabilities and push notifications.',
       gradient: 'from-pink-400 to-red-500',
       bgGradient: 'from-pink-500/10 to-red-500/10',
       delay: '1s',
@@ -69,20 +82,20 @@ export const FeatureShowcase: React.FC = () => {
             <Heart className="w-4 h-4 text-red-500 mr-2" />
             <span>Built for fitness enthusiasts, by fitness enthusiasts</span>
           </div>
-          
+
           <Typography
             variant="h2"
             className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6"
           >
-            Why Choose{' '}
-            <span className="text-gradient-brand">LiftFire</span>?
+            Why Choose <span className="text-gradient-brand">LiftFire</span>?
           </Typography>
-          
+
           <Typography
             variant="lead"
             className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
           >
-            We've reimagined fitness tracking from the ground up. Here's what makes us different from every other fitness app.
+            We've reimagined fitness tracking from the ground up. Here's what
+            makes us different from every other fitness app.
           </Typography>
         </div>
 
@@ -96,12 +109,16 @@ export const FeatureShowcase: React.FC = () => {
                 style={{ animationDelay: feature.delay }}
               >
                 {/* Background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                />
+
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300 animate-glow-pulse`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300 animate-glow-pulse`}
+                  >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
@@ -141,8 +158,12 @@ export const FeatureShowcase: React.FC = () => {
               </div>
             </div>
             <div className="text-left">
-              <div className="text-slate-900 dark:text-white font-bold">Join 10,000+ users</div>
-              <div className="text-slate-600 dark:text-slate-300 text-sm">Already transforming their fitness journey</div>
+              <div className="text-slate-900 dark:text-white font-bold">
+                Join 10,000+ users
+              </div>
+              <div className="text-slate-600 dark:text-slate-300 text-sm">
+                Already transforming their fitness journey
+              </div>
             </div>
           </div>
         </div>

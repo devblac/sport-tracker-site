@@ -199,7 +199,7 @@ export const SocialProofSection: React.FC = () => {
         window.clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, testimonials.length]);
+  }, [isAutoPlaying, testimonials.length, nextTestimonial]);
 
   // Touch/swipe support
   const handleTouchStart = (e: React.TouchEvent) => {

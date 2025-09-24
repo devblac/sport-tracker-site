@@ -5,7 +5,6 @@ import { Typography } from '../ui/Typography';
 import { Container } from '../ui/Container';
 
 export const FinalCTA: React.FC = () => {
-
   const handleStartJourney = () => {
     console.log('Start Your Journey clicked');
   };
@@ -72,8 +71,9 @@ export const FinalCTA: React.FC = () => {
               variant="lead"
               className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
             >
-              Join thousands of fitness enthusiasts who've already discovered the power of 
-              gamified, offline-first workout tracking. Your transformation starts today.
+              Join thousands of fitness enthusiasts who've already discovered
+              the power of gamified, offline-first workout tracking. Your
+              transformation starts today.
             </Typography>
           </div>
 
@@ -88,28 +88,36 @@ export const FinalCTA: React.FC = () => {
                   <Zap className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-white font-semibold text-sm">Works Offline</div>
-                  <div className="text-white/60 text-xs">Never miss a workout</div>
+                  <div className="text-white font-semibold text-sm">
+                    Works Offline
+                  </div>
+                  <div className="text-white/60 text-xs">
+                    Never miss a workout
+                  </div>
                 </div>
               </div>
-              
+
               <div className="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-white/10">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-white font-semibold text-sm">Gamified</div>
+                  <div className="text-white font-semibold text-sm">
+                    Gamified
+                  </div>
                   <div className="text-white/60 text-xs">Make fitness fun</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-white/10">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-left">
                   <div className="text-white font-semibold text-sm">Social</div>
-                  <div className="text-white/60 text-xs">Connect with friends</div>
+                  <div className="text-white/60 text-xs">
+                    Connect with friends
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,7 +177,10 @@ export const FinalCTA: React.FC = () => {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-5 h-5 bg-yellow-400 rounded-full mr-1 flex items-center justify-center">
+                    <div
+                      key={i}
+                      className="w-5 h-5 bg-yellow-400 rounded-full mr-1 flex items-center justify-center"
+                    >
                       <span className="text-xs text-yellow-900">★</span>
                     </div>
                   ))}

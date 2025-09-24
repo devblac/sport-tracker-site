@@ -19,5 +19,21 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Temporarily allow 'any' types for initial development
+      '@typescript-eslint/no-explicit-any': 'warn',
+      // Allow unused vars in test files and development utilities
+      '@typescript-eslint/no-unused-vars': ['error', { 
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true 
+      }],
+      // Allow require imports for configuration files
+      '@typescript-eslint/no-require-imports': 'warn',
+      // Relax fast refresh rules for context providers
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Allow var declarations in global type definitions
+      'no-var': 'warn'
+    },
   },
 ])

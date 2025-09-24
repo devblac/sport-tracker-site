@@ -6,7 +6,7 @@ import { FeatureGrid } from '../FeatureGrid';
 // Mock the useTranslations hook
 vi.mock('../../../hooks/useTranslations', () => ({
   useTranslations: vi.fn(() => ({
-    t: vi.fn((key: string, options?: { returnObjects?: boolean }) => {
+    t: vi.fn((key: string, _options?: { returnObjects?: boolean }) => {
       const translations: Record<string, any> = {
         'features.title': 'Why Choose LiftFire?',
         'features.subtitle':
