@@ -73,15 +73,15 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
         </Typography>
 
         <div className="mb-4">
-          <span className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+          <span className="text-4xl font-bold text-foreground">
             {plan.price}
           </span>
-          <span className="text-gray-600 dark:text-gray-400 ml-2">
+          <span className="text-muted-foreground ml-2">
             {plan.period}
           </span>
         </div>
 
-        <Typography variant="body" className="text-gray-600 dark:text-gray-400">
+        <Typography variant="body" className="text-muted-foreground">
           {plan.description}
         </Typography>
       </div>
@@ -94,7 +94,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
             </div>
             <Typography
               variant="small"
-              className="text-gray-700 dark:text-gray-300"
+              className="text-foreground/90"
             >
               {feature}
             </Typography>
@@ -137,7 +137,7 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
         </Typography>
         <Typography
           variant="body"
-          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          className="text-muted-foreground max-w-2xl mx-auto"
         >
           {t('comparison.subtitle')}
         </Typography>
@@ -147,28 +147,28 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-200 dark:border-gray-700">
-                <th className="text-left p-6 font-semibold text-gray-900 dark:text-gray-100">
+              <tr className="border-b border-border">
+                <th className="text-left p-6 font-semibold text-foreground">
                   {t('comparison.feature')}
                 </th>
-                <th className="text-center p-6 font-semibold text-gray-900 dark:text-gray-100 min-w-[120px]">
+                <th className="text-center p-6 font-semibold text-foreground min-w-[120px]">
                   <div className="flex flex-col items-center gap-2">
-                    <Zap className="w-6 h-6 text-green-600" />
+                    <Zap className="w-6 h-6 text-emerald-600" />
                     {t('plans.free.name')}
                   </div>
                 </th>
-                <th className="text-center p-6 font-semibold text-gray-900 dark:text-gray-100 min-w-[120px] relative">
+                <th className="text-center p-6 font-semibold text-foreground min-w-[120px] relative">
                   <div className="flex flex-col items-center gap-2">
-                    <Sparkles className="w-6 h-6 text-blue-600" />
+                    <Sparkles className="w-6 h-6 text-blue-600 animate-pulse" />
                     {t('plans.pro.name')}
                     <div className="absolute -top-2 -right-2">
-                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg">
                         {t('plans.mostPopular')}
                       </div>
                     </div>
                   </div>
                 </th>
-                <th className="text-center p-6 font-semibold text-gray-900 dark:text-gray-100 min-w-[120px]">
+                <th className="text-center p-6 font-semibold text-foreground min-w-[120px]">
                   <div className="flex flex-col items-center gap-2">
                     <Crown className="w-6 h-6 text-purple-600" />
                     {t('plans.elite.name')}
@@ -178,21 +178,21 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
             </thead>
             <tbody>
               {/* Pricing Row */}
-              <tr className="border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
-                <td className="p-6 font-semibold text-gray-900 dark:text-gray-100">
+              <tr className="border-b border-border bg-muted/50">
+                <td className="p-6 font-semibold text-foreground">
                   {t('comparison.pricing')}
                 </td>
                 <td className="text-center p-6">
-                  <div className="font-bold text-2xl text-gray-900 dark:text-gray-100">
+                  <div className="font-bold text-2xl text-emerald-600">
                     $0
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-muted-foreground">
                     {t('plans.free.period')}
                   </div>
                 </td>
                 <td className="text-center p-6">
                   <div className="font-bold text-2xl text-blue-600">$9.99</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-muted-foreground">
                     {t('plans.pro.period')}
                   </div>
                 </td>
@@ -200,7 +200,7 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
                   <div className="font-bold text-2xl text-purple-600">
                     $19.99
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-muted-foreground">
                     {t('plans.elite.period')}
                   </div>
                 </td>
@@ -210,9 +210,9 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
               {features.map((feature, index) => (
                 <tr
                   key={feature.key}
-                  className={`border-b border-gray-100 dark:border-gray-800 ${index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-900/50'}`}
+                  className={`border-b border-border hover:bg-muted/30 transition-colors ${index % 2 === 0 ? 'bg-background' : 'bg-muted/20'}`}
                 >
-                  <td className="p-6 text-gray-700 dark:text-gray-300">
+                  <td className="p-6 text-foreground/90">
                     {feature.label}
                   </td>
                   <td className="text-center p-6">
@@ -258,8 +258,8 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
               ))}
 
               {/* CTA Row */}
-              <tr className="bg-gray-50 dark:bg-gray-900/50">
-                <td className="p-6 font-semibold text-gray-900 dark:text-gray-100">
+              <tr className="bg-muted/50">
+                <td className="p-6 font-semibold text-foreground">
                   {t('comparison.getStarted')}
                 </td>
                 <td className="text-center p-6">
@@ -345,11 +345,11 @@ const FAQItem: React.FC<FAQItemProps> = ({
       >
         <div
           id={`faq-answer-${question}`}
-          className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700"
+          className="mt-4 pt-4 border-t border-border"
         >
           <Typography
             variant="body"
-            className="text-gray-600 dark:text-gray-400"
+            className="text-muted-foreground"
           >
             {answer}
           </Typography>
@@ -689,7 +689,11 @@ export const PricingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-blue-950 dark:to-purple-950 relative overflow-hidden">
+      {/* Animated glow orbs */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
+      
       <SEO
         title={tCommon('seo.pricingPage.title')}
         description={tCommon('seo.pricingPage.description')}
@@ -697,18 +701,18 @@ export const PricingPage: React.FC = () => {
         structuredData={structuredData}
         type="website"
       />
-      <Container className="py-16">
+      <Container className="py-16 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-slide-up">
           <Typography
             variant="h1"
-            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
           >
             {t('title')}
           </Typography>
           <Typography
             variant="lead"
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
           >
             {t('subtitle')}
           </Typography>
@@ -802,35 +806,42 @@ export const PricingPage: React.FC = () => {
         </div>
 
         {/* Final Upgrade CTA */}
-        <div className="bg-gradient-to-r from-slate-900 to-blue-900 dark:from-slate-800 dark:to-blue-800 rounded-2xl p-8 mb-16 text-center text-white">
-          <Typography
-            variant="h3"
-            className="text-2xl font-bold mb-4 text-white"
-          >
-            {t('finalCta.title')}
-          </Typography>
-          <Typography
-            variant="body"
-            className="text-blue-100 mb-6 max-w-2xl mx-auto"
-          >
-            {t('finalCta.description')}
-          </Typography>
+        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 rounded-2xl p-8 mb-16 text-center text-white overflow-hidden group hover:shadow-2xl transition-all duration-500">
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl group-hover:blur-2xl transition-all" aria-hidden="true" />
+          
+          <div className="relative z-10">
+            <Typography
+              variant="h3"
+              className="text-2xl font-bold mb-4 text-white"
+            >
+              {t('finalCta.title')}
+            </Typography>
+            <Typography
+              variant="body"
+              className="text-white/90 mb-6 max-w-2xl mx-auto"
+            >
+              {t('finalCta.description')}
+            </Typography>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => handlePlanSelect('free')}
-            >
-              {t('finalCta.startFree')}
-            </Button>
-            <Button
-              variant="glass"
-              size="lg"
-              onClick={() => handlePlanSelect('pro')}
-            >
-              {t('finalCta.upgradeToPro')}
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => handlePlanSelect('free')}
+                className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+              >
+                {t('finalCta.startFree')}
+              </Button>
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => handlePlanSelect('pro')}
+                className="bg-white text-blue-600 hover:bg-white/90"
+              >
+                {t('finalCta.upgradeToPro')}
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -841,7 +852,7 @@ export const PricingPage: React.FC = () => {
           </Typography>
           <Typography
             variant="body"
-            className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+            className="text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
             {t('contact.description')}
           </Typography>

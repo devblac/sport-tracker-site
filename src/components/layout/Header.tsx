@@ -1,55 +1,7 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
-import { useCommonTranslations } from '../../hooks/useTranslations';
 import { cn } from '../../utils/cn';
-
-// Simple SVG icons
-const MenuIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={cn('h-6 w-6', className)}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 6h16M4 12h16M4 18h16"
-    />
-  </svg>
-);
-
-const CloseIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={cn('h-6 w-6', className)}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-);
-
-const LiftFireLogo = ({ className }: { className?: string }) => (
-  <div className={cn('flex items-center space-x-2', className)}>
-    <div className="w-8 h-8 bg-gradient-brand rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold text-lg">L</span>
-    </div>
-    <span className="text-xl font-bold text-gray-900 dark:text-gray-100">
-      LiftFire
-    </span>
-  </div>
-);
 
 export interface NavItem {
   label: string;
@@ -62,157 +14,91 @@ export interface HeaderProps {
   className?: string;
 }
 
+// Simplified navigation - desktop-first, always visible
+const DEFAULT_NAV: NavItem[] = [
+  { label: 'Features', href: '/features' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Roadmap', href: '/roadmap' },
+  { label: 'Community', href: '/community' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const NavLink = ({
+  item,
+  isActive,
+}: {
+  item: NavItem;
+  isActive: boolean;
+}) => {
+  const baseClasses = 'text-sm font-medium transition-colors no-underline px-3 py-2 rounded-lg';
+  const activeClasses = 'text-slate-100 bg-slate-800';
+  const inactiveClasses = 'text-slate-400 hover:text-slate-100';
+
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(baseClasses, inactiveClasses, 'flex items-center gap-1')}
+      >
+        {item.label}
+        <span className="text-xs opacity-60">↗</span>
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      to={item.href}
+      className={cn(baseClasses, isActive ? activeClasses : inactiveClasses)}
+    >
+      {item.label}
+    </Link>
+  );
+};
+
 export function Header({ navItems, className }: HeaderProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { buttons, navigation } = useCommonTranslations();
   const location = useLocation();
-
-  // Use translated navigation items if none provided
-  const translatedNavItems: NavItem[] = [
-    { label: navigation.home, href: '/' },
-    { label: navigation.features, href: '/features' },
-    { label: navigation.pricing, href: '/pricing' },
-    { label: navigation.roadmap, href: '/roadmap' },
-    { label: navigation.community, href: '/community' },
-    { label: navigation.contact, href: '/contact' },
-  ];
-
-  const finalNavItems = navItems || translatedNavItems;
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const finalNavItems = navItems || DEFAULT_NAV;
 
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
+        'fixed top-0 left-0 right-0 z-50 border-b border-slate-800 bg-slate-900/95 backdrop-blur-lg',
         className
       )}
     >
-      <Container size="xl" padding="md">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center gap-2 no-underline">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500">
+              <span className="text-white font-bold text-sm">LF</span>
+            </div>
+            <span className="text-base font-bold text-slate-100">LiftFire</span>
+          </Link>
+
+          {/* Navigation - Center */}
+          <nav className="hidden md:flex items-center gap-1">
+            {finalNavItems.map(item => (
+              <NavLink key={item.label} item={item} isActive={location.pathname === item.href} />
+            ))}
+          </nav>
+
+          {/* Actions - Right */}
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher showLabel={false} />
+            <ThemeToggle />
             <Link
-              to="/"
-              className="flex items-center"
-              onClick={closeMobileMenu}
+              to="/contact"
+              className="hidden sm:inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 transition-colors"
             >
-              <LiftFireLogo />
+              Get Started
             </Link>
           </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {finalNavItems.map(item => {
-              const isActive = location.pathname === item.href;
-              return item.external ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={cn(
-                    'text-sm font-medium transition-colors duration-200',
-                    isActive
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher />
-            <ThemeToggle />
-            <Button variant="primary" size="sm">
-              {buttons.startJourney}
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:hidden">
-            <LanguageSwitcher variant="button" showLabel={false} />
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleMobileMenu}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-            </Button>
-          </div>
         </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={cn(
-            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isMobileMenuOpen
-              ? 'max-h-96 opacity-100 pb-6'
-              : 'max-h-0 opacity-0 pb-0'
-          )}
-        >
-          <nav className="flex flex-col space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-            {finalNavItems.map(item => {
-              const isActive = location.pathname === item.href;
-              return item.external ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 py-2"
-                  onClick={closeMobileMenu}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={cn(
-                    'text-base font-medium transition-colors duration-200 py-2',
-                    isActive
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
-                  )}
-                  onClick={closeMobileMenu}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <div className="pt-4 border-t border-gray-200 dark:border-gray-700 space-y-4">
-              <div className="flex justify-center">
-                <LanguageSwitcher />
-              </div>
-              <Button variant="primary" size="md" className="w-full">
-                {buttons.startJourney}
-              </Button>
-            </div>
-          </nav>
-        </div>
-      </Container>
+      </div>
     </header>
   );
 }

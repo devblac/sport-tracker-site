@@ -142,7 +142,7 @@ export function PageLayout({
   return (
     <div
       className={cn(
-        'min-h-screen flex flex-col bg-background text-foreground',
+        'min-h-screen flex flex-col bg-slate-900 text-slate-100',
         className
       )}
     >
@@ -152,11 +152,12 @@ export function PageLayout({
       {/* Header */}
       {includeHeader && <Header {...headerProps} />}
 
-      {/* Main content */}
-      <main className="flex-1">{children}</main>
+      {/* Main content - add padding-top for fixed header */}
+      <main id="main-content" className="flex-1 pt-16">{children}</main>
 
       {/* Footer */}
       {includeFooter && <Footer {...footerProps} />}
     </div>
   );
 }
+

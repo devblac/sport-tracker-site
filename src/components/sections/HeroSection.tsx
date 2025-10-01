@@ -1,340 +1,204 @@
 import React from 'react';
-import { ArrowRight, Play, Users, Zap, Trophy, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  Activity,
+  ArrowRight,
+  Play,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp,
+  Users,
+} from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Typography } from '../ui/Typography';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
 
+const HERO_FEATURES = [
+  {
+    icon: ShieldCheck,
+    title: 'Offline-first logging',
+    description: 'Never lose a set—even in basements or airplane mode.',
+  },
+  {
+    icon: Activity,
+    title: 'AI coaching cues',
+    description: 'Adaptive plans that react to your fatigue and goals.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Progress you can feel',
+    description: 'Earn XP, streaks, and achievements that keep you showing up.',
+  },
+];
+
+const PhoneStatRow = ({
+  label,
+  value,
+  helper,
+  icon: Icon,
+}: {
+  label: string;
+  value: string;
+  helper: string;
+  icon: React.ComponentType<{ className?: string }>;
+}) => (
+  <div className="flex items-center justify-between rounded-2xl bg-muted/50 px-4 py-3 hover:bg-muted/70 transition-colors group">
+    <div className="flex items-center gap-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all">
+        <Icon className="h-5 w-5 text-foreground group-hover:scale-110 transition-transform" />
+      </div>
+      <div>
+        <p className="text-sm font-semibold text-foreground">{label}</p>
+        <p className="text-xs text-muted-foreground">{helper}</p>
+      </div>
+    </div>
+    <span className="text-lg font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">{value}</span>
+  </div>
+);
+
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 overflow-hidden flex items-center">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-emerald-500/10 animate-pulse" />
-
-      {/* Floating Background Elements */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-bounce" />
-      <div className="absolute top-40 right-32 w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-32 left-32 w-40 h-40 bg-emerald-500/10 rounded-full blur-xl animate-bounce" />
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-blue-950 dark:to-purple-950 pb-24 pt-32">
+      {/* Animated glow orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-bounce-gentle" aria-hidden="true" />
 
       <Container size="xl" padding="lg" className="relative z-10">
-        <div className="min-h-[80vh] flex items-center justify-center">
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left Content */}
-              <div className="order-2 lg:order-1 space-y-8 text-center lg:text-left">
-                {/* Trust Badge */}
-                <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
-                    <Users className="w-5 h-5 text-emerald-400" />
-                    <span className="text-white font-medium">
-                      Join 10,000+ fitness enthusiasts
-                    </span>
-                  </div>
-                </div>
+        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
+          <div className="space-y-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2 text-sm font-medium tracking-wide shadow-lg backdrop-blur animate-slide-up">
+              <Sparkles className="h-4 w-4 text-amber-500 animate-pulse" />
+              <span className="text-foreground">Beta access now open for dedicated lifters</span>
+            </div>
 
-                {/* Main Headline */}
-                <div>
-                  <Typography
-                    variant="h1"
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4"
+            <div className="space-y-6">
+              <Typography
+                variant="h1"
+                className="max-w-3xl text-4xl font-extrabold text-foreground sm:text-5xl lg:text-6xl animate-slide-up"
+                style={{ animationDelay: '0.1s' }}
+              >
+                Train smarter, stay consistent, and <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">level up every session</span>.
+              </Typography>
+              <Typography
+                variant="lead"
+                className="max-w-2xl text-lg text-muted-foreground sm:text-xl animate-slide-up"
+                style={{ animationDelay: '0.2s' }}
+              >
+                LiftFire is the gamified workout companion built for focused strength athletes. Track your lifts offline, unlock AI coaching insights, and compete with your crew—without the noise.
+              </Typography>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              {HERO_FEATURES.map(({ icon: Icon, title, description }) => (
+                <div
+                  key={title}
+                  className="rounded-2xl border border-border bg-card/50 backdrop-blur p-5 hover:bg-card hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 group"
+                >
+                  <Icon className="mb-3 h-6 w-6 text-blue-600 group-hover:scale-110 group-hover:rotate-3 transition-all" />
+                  <p className="text-sm font-semibold text-foreground group-hover:text-blue-600 transition-colors">{title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <Button variant="gradient" size="lg" asChild className="group">
+                <Link to="/contact" className="flex items-center gap-3">
+                  {"Join the waitlist"}
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="group"
+              >
+                <Link to="/features" className="flex items-center gap-3">
+                  <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Watch feature tour
+                </Link>
+              </Button>
+            </div>
+
+            <div className="flex flex-col gap-4 text-sm sm:flex-row sm:items-center sm:gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="flex -space-x-3">
+                {['A', 'B', 'C'].map(letter => (
+                  <div
+                    key={letter}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-blue-500 to-purple-500 text-sm font-semibold text-white backdrop-blur shadow-lg hover:scale-110 transition-transform"
                   >
-                    <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      Transform Your
-                      <br />
-                      Fitness Journey
-                    </span>
-                  </Typography>
-                  <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
-                </div>
-
-                {/* Subheadline */}
-                <div>
-                  <Typography
-                    variant="large"
-                    className="text-white/90 font-medium leading-relaxed"
-                  >
-                    The first{' '}
-                    <span className="text-blue-400 font-bold">
-                      gamified gym tracker
-                    </span>{' '}
-                    that works{' '}
-                    <span className="text-emerald-400 font-bold">
-                      100% offline
-                    </span>
-                    , connects you with friends, and uses AI to optimize your
-                    workouts.
-                  </Typography>
-                </div>
-
-                {/* Feature Highlights */}
-                <div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto lg:mx-0">
-                    {[
-                      {
-                        icon: Zap,
-                        title: '100% Offline',
-                        subtitle: 'Works anywhere',
-                        color: 'text-amber-400',
-                      },
-                      {
-                        icon: Trophy,
-                        title: 'Gamified',
-                        subtitle: 'XP & Achievements',
-                        color: 'text-purple-400',
-                      },
-                      {
-                        icon: Shield,
-                        title: 'Privacy First',
-                        subtitle: 'Your data, your control',
-                        color: 'text-emerald-400',
-                      },
-                    ].map((feature, index) => (
-                      <Card
-                        key={index}
-                        className="bg-white/10 backdrop-blur-md border-white/10 p-4 hover:bg-white/15 transition-all duration-300"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div
-                            className={`p-2 rounded-lg bg-gradient-to-br from-current/20 to-current/10 ${feature.color}`}
-                          >
-                            <feature.icon className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <Typography
-                              variant="body"
-                              className="text-white font-semibold"
-                            >
-                              {feature.title}
-                            </Typography>
-                            <Typography
-                              variant="small"
-                              className="text-white/60"
-                            >
-                              {feature.subtitle}
-                            </Typography>
-                          </div>
-                        </div>
-                      </Card>
-                    ))}
+                    {letter}
                   </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <Button variant="gradient" size="lg" className="group">
-                      Start Your Journey
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-
-                    <Button variant="glass" size="lg" className="group">
-                      <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Watch Demo
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Social Proof */}
-                <div>
-                  <div className="flex items-center gap-8 flex-wrap justify-center lg:justify-start">
-                    <div className="flex items-center gap-3">
-                      <div className="flex -space-x-2">
-                        {[
-                          'bg-gradient-to-br from-blue-400 to-blue-600',
-                          'bg-gradient-to-br from-emerald-400 to-emerald-600',
-                          'bg-gradient-to-br from-pink-400 to-pink-600',
-                          'bg-gradient-to-br from-amber-400 to-amber-600',
-                        ].map((gradient, index) => (
-                          <div
-                            key={index}
-                            className={`w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold ${gradient}`}
-                          >
-                            {index === 3 ? '+' : ''}
-                          </div>
-                        ))}
-                      </div>
-                      <Typography
-                        variant="body"
-                        className="text-white/70 font-medium"
-                      >
-                        10,000+ users
-                      </Typography>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <div key={i} className="w-4 h-4 text-amber-400">
-                            ⭐
-                          </div>
-                        ))}
-                      </div>
-                      <Typography
-                        variant="body"
-                        className="text-white/70 font-medium"
-                      >
-                        4.9/5 rating
-                      </Typography>
-                    </div>
-                  </div>
+                ))}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-rose-500 to-orange-400 text-sm font-semibold text-white shadow-lg hover:scale-110 transition-transform">
+                  +
                 </div>
               </div>
-
-              {/* Right Content - App Preview */}
-              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <div className="relative">
-                  {/* Phone Mockup */}
-                  <Card className="w-80 h-[640px] bg-gradient-to-br from-slate-800/80 to-slate-900/90 backdrop-blur-md border-8 border-white/10 rounded-[3rem] overflow-hidden shadow-2xl">
-                    <div className="p-6 h-full flex flex-col">
-                      {/* Status Bar */}
-                      <div className="flex justify-between items-center mb-6">
-                        <Typography
-                          variant="body"
-                          className="text-white/80 font-medium"
-                        >
-                          9:41
-                        </Typography>
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-2 bg-white/60 rounded-sm" />
-                          <div className="w-6 h-3 border border-white/60 rounded-sm relative">
-                            <div className="w-4 h-1 bg-emerald-400 rounded-sm absolute top-1/2 left-0.5 transform -translate-y-1/2" />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* App Header */}
-                      <div className="text-center mb-8">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                          <Trophy className="w-8 h-8 text-white" />
-                        </div>
-                        <Typography
-                          variant="h6"
-                          className="text-white font-bold mb-1"
-                        >
-                          Welcome back, Alex!
-                        </Typography>
-                        <Typography variant="body" className="text-white/60">
-                          Ready to crush your goals?
-                        </Typography>
-                      </div>
-
-                      {/* Stats Preview */}
-                      <div className="space-y-4 flex-1">
-                        <Card className="bg-white/5 backdrop-blur-md border-white/10 p-4">
-                          <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center">
-                                <Trophy className="w-5 h-5 text-white" />
-                              </div>
-                              <div>
-                                <Typography
-                                  variant="body"
-                                  className="text-white font-semibold"
-                                >
-                                  Workout Streak
-                                </Typography>
-                                <Typography
-                                  variant="small"
-                                  className="text-white/60"
-                                >
-                                  Keep it going!
-                                </Typography>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <Typography
-                                variant="h6"
-                                className="text-amber-400 font-bold"
-                              >
-                                12
-                              </Typography>
-                              <Typography
-                                variant="small"
-                                className="text-white/60"
-                              >
-                                days
-                              </Typography>
-                            </div>
-                          </div>
-                        </Card>
-
-                        <Card className="bg-white/5 backdrop-blur-md border-white/10 p-4">
-                          <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center">
-                                <Zap className="w-5 h-5 text-white" />
-                              </div>
-                              <div>
-                                <Typography
-                                  variant="body"
-                                  className="text-white font-semibold"
-                                >
-                                  XP Earned
-                                </Typography>
-                                <Typography
-                                  variant="small"
-                                  className="text-white/60"
-                                >
-                                  Level up!
-                                </Typography>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <Typography
-                                variant="h6"
-                                className="text-emerald-400 font-bold"
-                              >
-                                3,240
-                              </Typography>
-                              <Typography
-                                variant="small"
-                                className="text-white/60"
-                              >
-                                +450 today
-                              </Typography>
-                            </div>
-                          </div>
-                        </Card>
-                      </div>
-
-                      {/* CTA Button */}
-                      <Button
-                        variant="gradient"
-                        size="lg"
-                        className="w-full mt-6"
-                      >
-                        Start Workout
-                      </Button>
-                    </div>
-                  </Card>
-
-                  {/* Floating Elements */}
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center animate-bounce">
-                    <Trophy className="w-8 h-8 text-amber-400" />
-                  </div>
-                  <div className="absolute -top-2 -right-6 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl flex items-center justify-center animate-pulse">
-                    <Zap className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <div
-                    className="absolute -bottom-4 -left-2 w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center animate-bounce"
-                    style={{ animationDelay: '1s' }}
-                  >
-                    <Shield className="w-7 h-7 text-purple-400" />
-                  </div>
-                </div>
+              <div className="text-sm text-muted-foreground">
+                Trusted by <span className="font-semibold text-foreground">10,000+ lifters</span> · <span className="text-amber-500">4.9/5</span> beta satisfaction score
               </div>
             </div>
           </div>
+
+          <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="absolute -z-[1] -top-10 right-0 h-72 w-72 rounded-full bg-purple-500/30 blur-3xl animate-pulse" aria-hidden="true" />
+            <div className="absolute -z-[1] bottom-10 left-0 h-64 w-64 rounded-full bg-blue-500/30 blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} aria-hidden="true" />
+
+            <Card
+              variant="glow"
+              padding="lg"
+              hover={false}
+              className="relative w-full max-w-sm rounded-[2.5rem] border border-border bg-card/80 backdrop-blur-2xl shadow-2xl hover:shadow-blue-500/20 transition-shadow duration-500"
+            >
+              <div className="absolute inset-0 rounded-[2.5rem] border border-border/50" aria-hidden="true" />
+              <div className="space-y-6">
+                <div className="flex items-start justify-between text-xs uppercase tracking-[0.35em] text-muted-foreground">
+                  <span>Session · Upper push</span>
+                  <span className="text-emerald-500">Offline mode</span>
+                </div>
+
+                <div>
+                  <p className="text-sm text-muted-foreground">Welcome back, Alex</p>
+                  <p className="mt-1 text-2xl font-semibold text-foreground">
+                    Ready to crush your goals?
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <PhoneStatRow
+                    icon={Activity}
+                    label="Workout streak"
+                    helper="Keep it going!"
+                    value="12 days"
+                  />
+                  <PhoneStatRow
+                    icon={TrendingUp}
+                    label="XP earned"
+                    helper="+450 today"
+                    value="3,240"
+                  />
+                  <PhoneStatRow
+                    icon={Users}
+                    label="Crew challenge"
+                    helper="Team Nimbus is leading"
+                    value="+18%"
+                  />
+                </div>
+
+                <div className="rounded-2xl border border-border bg-gradient-to-r from-blue-500 to-purple-500 p-4 text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/70">AI insight</p>
+                  <p className="mt-2 text-sm font-semibold">
+                    You hit a 4-week volume PR on bench. Add a deload set this weekend for maximum recovery.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </Container>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-white/50 rounded-full animate-pulse" />
-        </div>
-      </div>
     </section>
   );
 };

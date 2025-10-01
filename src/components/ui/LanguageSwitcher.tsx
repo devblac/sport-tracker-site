@@ -4,7 +4,6 @@ import { useCommonTranslations } from '../../hooks/useTranslations';
 import { Button } from './Button';
 import { cn } from '../../utils/cn';
 
-// Simple chevron down icon
 const ChevronDownIcon = ({ className }: { className?: string }) => (
   <svg
     className={cn('h-4 w-4', className)}
@@ -17,7 +16,6 @@ const ChevronDownIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Globe icon for language
 const GlobeIcon = ({ className }: { className?: string }) => (
   <svg
     className={cn('h-4 w-4', className)}
@@ -56,13 +54,9 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -81,11 +75,8 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   };
 
   if (variant === 'button') {
-    // Simple button that cycles through languages
     const handleCycleLanguage = () => {
-      const currentIndex = supportedLanguages.findIndex(
-        lang => lang.code === currentLanguage
-      );
+      const currentIndex = supportedLanguages.findIndex(lang => lang.code === currentLanguage);
       const nextIndex = (currentIndex + 1) % supportedLanguages.length;
       const nextLanguage = supportedLanguages[nextIndex];
       handleLanguageChange(nextLanguage.code);
@@ -93,14 +84,17 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
     return (
       <Button
-        variant="ghost"
+        variant="glass"
         size="sm"
         onClick={handleCycleLanguage}
         disabled={isLoading}
-        className={cn('flex items-center gap-2', className)}
+        className={cn(
+          'flex items-center gap-2 rounded-full border border-white/15 bg-white/10 text-white hover:bg-white/20',
+          className
+        )}
         aria-label={`${labels.language}: ${languageConfig.name}`}
       >
-        <GlobeIcon />
+        <GlobeIcon className="text-white/80" />
         <span className="text-sm font-medium">
           {languageConfig.flag} {showLabel && languageConfig.name}
         </span>
@@ -108,42 +102,40 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     );
   }
 
-  // Dropdown variant
   return (
     <div className={cn('relative', className)} ref={dropdownRef}>
       <Button
-        variant="ghost"
+        variant="glass"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isLoading}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 text-white hover:bg-white/20"
         aria-label={`${labels.language}: ${languageConfig.name}`}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
-        <GlobeIcon />
+        <GlobeIcon className="text-white/80" />
         <span className="text-sm font-medium">
           {languageConfig.flag} {showLabel && languageConfig.name}
         </span>
         <ChevronDownIcon
           className={cn(
-            'transition-transform duration-200',
+            'transition-transform duration-200 text-white/70',
             isOpen && 'rotate-180'
           )}
         />
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
-          <div className="py-1" role="listbox" aria-label={labels.language}>
+        <div className="absolute right-0 mt-2 w-52 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 shadow-2xl backdrop-blur">
+          <div className="py-2" role="listbox" aria-label={labels.language}>
             {supportedLanguages.map(language => (
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
                 className={cn(
-                  'w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-3 transition-colors',
-                  currentLanguage === language.code &&
-                    'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
+                  'flex w-full items-center gap-3 px-4 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-white/10',
+                  currentLanguage === language.code && 'bg-white/10 text-white'
                 )}
                 role="option"
                 aria-selected={currentLanguage === language.code}
@@ -151,9 +143,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                 <span className="text-lg">{language.flag}</span>
                 <span className="font-medium">{language.name}</span>
                 {currentLanguage === language.code && (
-                  <span className="ml-auto text-primary-600 dark:text-primary-400">
-                    ✓
-                  </span>
+                  <span className="ml-auto text-blue-400">?</span>
                 )}
               </button>
             ))}

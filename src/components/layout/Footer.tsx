@@ -1,6 +1,4 @@
 import React from 'react';
-import { Container } from '../ui/Container';
-import { Text } from '../ui/Typography';
 import { cn } from '../../utils/cn';
 
 // Social media icons
@@ -146,85 +144,67 @@ export function Footer({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      className={cn(
-        'bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800',
-        className
-      )}
-    >
-      <Container size="xl" padding="md">
-        <div className="py-12">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            {sections.map(section => (
-              <div key={section.title}>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.links.map(link => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noopener noreferrer' : undefined}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+    <footer className={cn('bg-slate-950 dark:bg-slate-950 border-t border-slate-800', className)}>
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {sections.map(section => (
+            <div key={section.title}>
+              <h3 className="text-sm font-bold text-slate-100 uppercase tracking-wider mb-4">
+                {section.title}
+              </h3>
+              <ul className="space-y-3">
+                {section.links.map(link => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
+                      target={link.external ? '_blank' : undefined}
+                      rel={link.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-          {/* Bottom Section */}
-          <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              {/* Copyright */}
-              <div className="flex items-center space-x-4">
-                <div className="w-6 h-6 bg-gradient-brand rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">L</span>
-                </div>
-                <Text
-                  variant="small"
-                  className="text-gray-600 dark:text-gray-400"
-                >
-                  © {currentYear} LiftFire. All rights reserved.
-                </Text>
+        {/* Bottom Section */}
+        <div className="pt-8 border-t border-slate-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Copyright */}
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500">
+                <span className="text-white font-bold text-sm">LF</span>
               </div>
+              <span className="text-sm text-slate-400">
+                © {currentYear} LiftFire. All rights reserved.
+              </span>
+            </div>
 
-              {/* Social Links */}
-              <div className="flex items-center space-x-4">
-                <Text
-                  variant="small"
-                  className="text-gray-600 dark:text-gray-400 hidden sm:block"
-                >
-                  Follow us:
-                </Text>
-                <div className="flex space-x-3">
-                  {socialLinks.map(social => {
-                    const IconComponent = social.icon;
-                    return (
-                      <a
-                        key={social.name}
-                        href={social.href}
-                        className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Follow us on ${social.name}`}
-                      >
-                        <IconComponent />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map(social => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="text-slate-400 hover:text-slate-100 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow us on ${social.name}`}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
