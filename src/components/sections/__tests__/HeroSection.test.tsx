@@ -22,14 +22,23 @@ beforeAll(() => {
   });
 });
 
+// Types for mocked components
+interface MockMotionComponentProps extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+  animate?: Record<string, unknown>;
+  initial?: Record<string, unknown>;
+  transition?: Record<string, unknown>;
+  variants?: Record<string, unknown>;
+}
+
 // Mock framer-motion to avoid animation issues in tests
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    section: ({ children, ...props }: any) => (
+    div: ({ children, ...props }: MockMotionComponentProps) => <div {...props}>{children}</div>,
+    section: ({ children, ...props }: MockMotionComponentProps) => (
       <section {...props}>{children}</section>
     ),
-    svg: ({ children, ...props }: any) => <svg {...props}>{children}</svg>,
+    svg: ({ children, ...props }: MockMotionComponentProps) => <svg {...props}>{children}</svg>,
   },
 }));
 
@@ -50,12 +59,31 @@ vi.mock('../../../hooks/useTranslations', () => ({
   }),
 }));
 
+// Types for mocked UI components
+interface MockButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'gradient' | 'glass';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  loading?: boolean;
+  children?: React.ReactNode;
+}
+
+interface MockContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+  children?: React.ReactNode;
+}
+
+interface MockTypographyProps extends React.HTMLAttributes<HTMLElement> {
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'small' | 'span';
+  children?: React.ReactNode;
+}
+
 // Mock UI components
 vi.mock('../../ui/Button', () => ({
-  Button: ({ children, onClick, variant, className, ...props }: any) => (
+  Button: ({ children, onClick, variant, className, ...props }: MockButtonProps) => (
     <button
       onClick={onClick}
-      className={`${variant === 'primary' ? 'bg-blue-600' : 'bg-purple-600'} ${className}`}
+      className={`${variant === 'primary' ? 'bg-blue-600' : 'bg-purple-600'} ${className || ''}`}
       {...props}
     >
       {children}
@@ -64,15 +92,15 @@ vi.mock('../../ui/Button', () => ({
 }));
 
 vi.mock('../../ui/Container', () => ({
-  Container: ({ children, className, ...props }: any) => (
-    <div className={`container mx-auto px-4 ${className}`} {...props}>
+  Container: ({ children, className, ...props }: MockContainerProps) => (
+    <div className={`container mx-auto px-4 ${className || ''}`} {...props}>
       {children}
     </div>
   ),
 }));
 
 vi.mock('../../ui/Typography', () => ({
-  Typography: ({ children, variant, className, ...props }: any) => {
+  Typography: ({ children, variant, className, ...props }: MockTypographyProps) => {
     const Tag =
       variant === 'h1'
         ? 'h1'

@@ -1,54 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from '../../../contexts/ThemeContext';
 import { PageLayout } from '../PageLayout';
-import { expect } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { expect } from 'vitest';
-import { it } from 'vitest';
-import { vi } from 'vitest';
-import { beforeEach } from 'vitest';
-import { describe } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
-import { vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 // Mock localStorage for ThemeProvider
 const localStorageMock = {
@@ -76,7 +29,11 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-const PageLayoutWrapper = ({ children, ...props }: any) => (
+interface PageLayoutWrapperProps extends React.ComponentProps<typeof PageLayout> {
+  children?: React.ReactNode;
+}
+
+const PageLayoutWrapper = ({ children, ...props }: PageLayoutWrapperProps) => (
   <ThemeProvider>
     <PageLayout {...props}>{children}</PageLayout>
   </ThemeProvider>

@@ -12,12 +12,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 import { BASE_STYLES, VARIANTS, SIZES } from './button-styles';
 
-export const buttonClasses = (
-  variant: NonNullable<ButtonProps['variant']> = 'primary',
-  size: NonNullable<ButtonProps['size']> = 'md',
-  className?: string,
-) => cn(BASE_STYLES, VARIANTS[variant], SIZES[size], className);
-
 const shimmer = (
   <div className="absolute inset-0 -top-2 -bottom-2 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
 );

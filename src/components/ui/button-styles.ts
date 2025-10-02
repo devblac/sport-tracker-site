@@ -1,4 +1,11 @@
 import { ButtonProps } from './Button';
+import { cn } from '../../utils/cn';
+
+export const buttonClasses = (
+  variant: NonNullable<ButtonProps['variant']> = 'primary',
+  size: NonNullable<ButtonProps['size']> = 'md',
+  className?: string,
+) => cn(BASE_STYLES, VARIANTS[variant], SIZES[size], className);
 
 export const BASE_STYLES =
   'inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group';
