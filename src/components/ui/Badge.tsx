@@ -2,7 +2,15 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info' | 'outline';
+  variant?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'info'
+    | 'outline';
   size?: 'sm' | 'md' | 'lg';
   glow?: boolean;
   pulse?: boolean;
@@ -38,10 +46,8 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
         'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30',
       error:
         'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg shadow-red-500/30',
-      info:
-        'bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30',
-      outline:
-        'border-2 border-current text-foreground hover:bg-muted',
+      info: 'bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30',
+      outline: 'border-2 border-current text-foreground hover:bg-muted',
     };
 
     const sizes = {
@@ -50,13 +56,9 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       lg: 'px-4 py-1.5 text-base gap-2',
     };
 
-    const glowEffect = glow
-      ? 'shadow-2xl animate-pulse'
-      : '';
+    const glowEffect = glow ? 'shadow-2xl animate-pulse' : '';
 
-    const pulseEffect = pulse
-      ? 'animate-pulse'
-      : '';
+    const pulseEffect = pulse ? 'animate-pulse' : '';
 
     return (
       <span
@@ -80,4 +82,3 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 Badge.displayName = 'Badge';
 
 export { Badge };
-

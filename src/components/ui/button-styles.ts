@@ -4,7 +4,7 @@ import { cn } from '../../utils/cn';
 export const buttonClasses = (
   variant: NonNullable<ButtonProps['variant']> = 'primary',
   size: NonNullable<ButtonProps['size']> = 'md',
-  className?: string,
+  className?: string
 ) => cn(BASE_STYLES, VARIANTS[variant], SIZES[size], className);
 
 export const BASE_STYLES =

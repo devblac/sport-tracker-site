@@ -8,11 +8,22 @@ export const FinalCTA: React.FC = () => {
     'mailto:team@liftfire.app?subject=LiftFire%20Launch%20Updates&body=I%20would%20like%20to%20stay%20in%20the%20loop%20about%20LiftFire.';
 
   return (
-    <Section variant="gradient" spacing="large" className="relative overflow-hidden">
+    <Section
+      variant="gradient"
+      spacing="large"
+      className="relative overflow-hidden"
+    >
       {/* Animated gradient orbs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
-      
+      <div
+        className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: '1s' }}
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 text-center text-white">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur mb-8 shadow-lg">
           <Zap className="h-4 w-4" />
@@ -24,7 +35,8 @@ export const FinalCTA: React.FC = () => {
         </h2>
 
         <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Join thousands of lifters using LiftFire to track progress, stay motivated, and hit new PRs with AI-powered insights.
+          Join thousands of lifters using LiftFire to track progress, stay
+          motivated, and hit new PRs with AI-powered insights.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mb-10">
@@ -52,5 +64,3 @@ export const FinalCTA: React.FC = () => {
     </Section>
   );
 };
-
-

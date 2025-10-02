@@ -34,11 +34,15 @@ interface MockMotionComponentProps extends React.HTMLAttributes<HTMLElement> {
 // Mock framer-motion to avoid animation issues in tests
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: MockMotionComponentProps) => <div {...props}>{children}</div>,
+    div: ({ children, ...props }: MockMotionComponentProps) => (
+      <div {...props}>{children}</div>
+    ),
     section: ({ children, ...props }: MockMotionComponentProps) => (
       <section {...props}>{children}</section>
     ),
-    svg: ({ children, ...props }: MockMotionComponentProps) => <svg {...props}>{children}</svg>,
+    svg: ({ children, ...props }: MockMotionComponentProps) => (
+      <svg {...props}>{children}</svg>
+    ),
   },
 }));
 
@@ -60,8 +64,15 @@ vi.mock('../../../hooks/useTranslations', () => ({
 }));
 
 // Types for mocked UI components
-interface MockButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'gradient' | 'glass';
+interface MockButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'ghost'
+    | 'outline'
+    | 'gradient'
+    | 'glass';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   loading?: boolean;
   children?: React.ReactNode;
@@ -80,7 +91,13 @@ interface MockTypographyProps extends React.HTMLAttributes<HTMLElement> {
 
 // Mock UI components
 vi.mock('../../ui/Button', () => ({
-  Button: ({ children, onClick, variant, className, ...props }: MockButtonProps) => (
+  Button: ({
+    children,
+    onClick,
+    variant,
+    className,
+    ...props
+  }: MockButtonProps) => (
     <button
       onClick={onClick}
       className={`${variant === 'primary' ? 'bg-blue-600' : 'bg-purple-600'} ${className || ''}`}
@@ -100,7 +117,12 @@ vi.mock('../../ui/Container', () => ({
 }));
 
 vi.mock('../../ui/Typography', () => ({
-  Typography: ({ children, variant, className, ...props }: MockTypographyProps) => {
+  Typography: ({
+    children,
+    variant,
+    className,
+    ...props
+  }: MockTypographyProps) => {
     const Tag =
       variant === 'h1'
         ? 'h1'

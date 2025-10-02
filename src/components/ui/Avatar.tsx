@@ -28,7 +28,8 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     },
     ref
   ) => {
-    const baseStyles = 'relative inline-flex items-center justify-center rounded-full overflow-hidden flex-shrink-0';
+    const baseStyles =
+      'relative inline-flex items-center justify-center rounded-full overflow-hidden flex-shrink-0';
 
     const sizes = {
       xs: 'h-6 w-6 text-xs',
@@ -81,15 +82,25 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     };
 
     return (
-      <div className={cn(baseStyles, sizes[size], className)} ref={ref} {...props}>
+      <div
+        className={cn(baseStyles, sizes[size], className)}
+        ref={ref}
+        {...props}
+      >
         <div
           className={cn(
             'h-full w-full flex items-center justify-center font-semibold text-white',
-            variant === 'gradient' ? gradients[gradientColors] : variants[variant]
+            variant === 'gradient'
+              ? gradients[gradientColors]
+              : variants[variant]
           )}
         >
           {src ? (
-            <img src={src} alt={alt || 'Avatar'} className="h-full w-full object-cover" />
+            <img
+              src={src}
+              alt={alt || 'Avatar'}
+              className="h-full w-full object-cover"
+            />
           ) : (
             <span>{fallback ? getInitials(fallback) : '?'}</span>
           )}
@@ -132,7 +143,11 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
     const remaining = max ? childArray.length - max : 0;
 
     return (
-      <div className={cn('flex items-center -space-x-2', className)} ref={ref} {...props}>
+      <div
+        className={cn('flex items-center -space-x-2', className)}
+        ref={ref}
+        {...props}
+      >
         {displayChildren}
         {remaining > 0 && (
           <Avatar
@@ -150,4 +165,3 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
 AvatarGroup.displayName = 'AvatarGroup';
 
 export { Avatar };
-

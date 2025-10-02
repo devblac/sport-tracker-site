@@ -14,7 +14,11 @@ export interface FeaturePillarsProps {
   highlights: FeatureHighlight[];
 }
 
-export const FeaturePillars: React.FC<FeaturePillarsProps> = ({ heading, description, highlights }) => (
+export const FeaturePillars: React.FC<FeaturePillarsProps> = ({
+  heading,
+  description,
+  highlights,
+}) => (
   <Section variant="default" spacing="default">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
@@ -25,7 +29,7 @@ export const FeaturePillars: React.FC<FeaturePillarsProps> = ({ heading, descrip
       </p>
     </div>
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {highlights.map((highlight) => {
+      {highlights.map(highlight => {
         const Icon = highlight.icon;
         return (
           <div
@@ -40,8 +44,12 @@ export const FeaturePillars: React.FC<FeaturePillarsProps> = ({ heading, descrip
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
               {highlight.categoryLabel}
             </p>
-            <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">{highlight.title}</h3>
-            <p className="text-sm text-slate-300 leading-relaxed">{highlight.description}</p>
+            <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
+              {highlight.title}
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {highlight.description}
+            </p>
           </div>
         );
       })}

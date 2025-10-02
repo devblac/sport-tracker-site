@@ -25,10 +25,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   secondaryCta,
 }) => {
   return (
-    <Section variant="default" spacing="large" className="relative overflow-hidden pt-24">
+    <Section
+      variant="default"
+      spacing="large"
+      className="relative overflow-hidden pt-24"
+    >
       {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-transparent" aria-hidden="true" />
-      
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-transparent"
+        aria-hidden="true"
+      />
+
       <div className="relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6 text-left">
@@ -43,14 +50,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Link 
+              <Link
                 to={primaryCta.href}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-500 text-white text-base font-semibold rounded-full hover:bg-blue-600 hover:scale-105 transition-all shadow-lg hover:shadow-xl hover:shadow-blue-500/50"
               >
                 {primaryCta.label}
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link 
+              <Link
                 to={secondaryCta.href}
                 className="inline-flex items-center px-8 py-4 bg-slate-800 text-slate-100 text-base font-semibold rounded-full hover:bg-slate-700 hover:scale-105 transition-all border border-slate-700 shadow-md"
               >

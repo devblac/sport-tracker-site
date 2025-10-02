@@ -56,7 +56,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -76,7 +79,9 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
   if (variant === 'button') {
     const handleCycleLanguage = () => {
-      const currentIndex = supportedLanguages.findIndex(lang => lang.code === currentLanguage);
+      const currentIndex = supportedLanguages.findIndex(
+        lang => lang.code === currentLanguage
+      );
       const nextIndex = (currentIndex + 1) % supportedLanguages.length;
       const nextLanguage = supportedLanguages[nextIndex];
       handleLanguageChange(nextLanguage.code);

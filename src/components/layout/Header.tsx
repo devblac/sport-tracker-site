@@ -23,14 +23,9 @@ const DEFAULT_NAV: NavItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
-const NavLink = ({
-  item,
-  isActive,
-}: {
-  item: NavItem;
-  isActive: boolean;
-}) => {
-  const baseClasses = 'text-sm font-medium transition-colors no-underline px-3 py-2 rounded-lg';
+const NavLink = ({ item, isActive }: { item: NavItem; isActive: boolean }) => {
+  const baseClasses =
+    'text-sm font-medium transition-colors no-underline px-3 py-2 rounded-lg';
   const activeClasses = 'text-slate-100 bg-slate-800';
   const inactiveClasses = 'text-slate-400 hover:text-slate-100';
 
@@ -82,7 +77,11 @@ export function Header({ navItems, className }: HeaderProps) {
           {/* Navigation - Center */}
           <nav className="hidden md:flex items-center gap-1">
             {finalNavItems.map(item => (
-              <NavLink key={item.label} item={item} isActive={location.pathname === item.href} />
+              <NavLink
+                key={item.label}
+                item={item}
+                isActive={location.pathname === item.href}
+              />
             ))}
           </nav>
 

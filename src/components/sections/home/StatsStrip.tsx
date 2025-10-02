@@ -12,10 +12,10 @@ export interface StatsStripProps {
 }
 
 const iconMap = [
-  Activity,  // Workout streak
-  TrendingUp,  // XP earned
-  Sparkles,  // Satisfaction score
-  Users,  // Countries
+  Activity, // Workout streak
+  TrendingUp, // XP earned
+  Sparkles, // Satisfaction score
+  Users, // Countries
 ];
 
 export const StatsStrip: React.FC<StatsStripProps> = ({ stats }) => (
@@ -32,9 +32,13 @@ export const StatsStrip: React.FC<StatsStripProps> = ({ stats }) => (
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
                 <Icon className="h-5 w-5 text-blue-500 group-hover:scale-110 transition-transform" />
               </div>
-              <p className="text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">{stat.value}</p>
+              <p className="text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">
+                {stat.value}
+              </p>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">{stat.label}</p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {stat.label}
+            </p>
           </div>
         );
       })}

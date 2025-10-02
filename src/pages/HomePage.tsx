@@ -11,7 +11,10 @@ import {
 import { ROADMAP_QUARTERS } from '../data/roadmap';
 import { HeroSection } from '../components/sections/home/HeroSection';
 import { StatsStrip } from '../components/sections/home/StatsStrip';
-import { FeaturePillars, type FeatureHighlight } from '../components/sections/home/FeaturePillars';
+import {
+  FeaturePillars,
+  type FeatureHighlight,
+} from '../components/sections/home/FeaturePillars';
 import { RoadmapPreviewSection } from '../components/sections/home/RoadmapPreview';
 import { CommunityAiSection } from '../components/sections/home/CommunityAiSection';
 import { FinalCTA } from '../components/sections/FinalCTA';
@@ -28,7 +31,8 @@ const statusWeight: Record<FeatureStatus, number> = {
   experimental: 3,
 };
 
-const HERO_EYEBROW = 'LiftFire • Strength analytics for athletes who demand more';
+const HERO_EYEBROW =
+  'LiftFire • Strength analytics for athletes who demand more';
 
 export const HomePage: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -39,7 +43,10 @@ export const HomePage: React.FC = () => {
 
     ALL_FEATURES.forEach(feature => {
       const current = lookup.get(feature.category);
-      if (!current || statusWeight[feature.status] < statusWeight[current.status]) {
+      if (
+        !current ||
+        statusWeight[feature.status] < statusWeight[current.status]
+      ) {
         lookup.set(feature.category, feature);
       }
     });
@@ -50,7 +57,10 @@ export const HomePage: React.FC = () => {
     }));
   }, []);
 
-  const iconMap: Record<FeatureCategory, React.ComponentType<{ className?: string }>> = {
+  const iconMap: Record<
+    FeatureCategory,
+    React.ComponentType<{ className?: string }>
+  > = {
     core: Activity,
     gamification: Trophy,
     social: Users,
@@ -58,12 +68,14 @@ export const HomePage: React.FC = () => {
     technical: ShieldCheck,
   };
 
-  const featureHighlights: FeatureHighlight[] = highlightedByCategory.map(({ category, feature }) => ({
-    categoryLabel: FEATURE_CATEGORIES[category],
-    title: feature.title,
-    description: feature.description,
-    icon: iconMap[category],
-  }));
+  const featureHighlights: FeatureHighlight[] = highlightedByCategory.map(
+    ({ category, feature }) => ({
+      categoryLabel: FEATURE_CATEGORIES[category],
+      title: feature.title,
+      description: feature.description,
+      icon: iconMap[category],
+    })
+  );
 
   const roadmapPreview = useMemo(() => ROADMAP_QUARTERS.slice(0, 3), []);
 
@@ -75,7 +87,9 @@ export const HomePage: React.FC = () => {
       createWebPageSchema(
         t('seo.homePage.title'),
         t('seo.homePage.description'),
-        typeof window !== 'undefined' ? window.location.href : 'https://liftfire.app',
+        typeof window !== 'undefined'
+          ? window.location.href
+          : 'https://liftfire.app',
         currentLanguage
       ),
     ],
@@ -97,7 +111,10 @@ export const HomePage: React.FC = () => {
         subtitle="The offline-first strength companion trusted by dedicated lifters. Track effortlessly, stay motivated, and let LiftFire AI guide every training block."
         bullets={HERO_BULLETS}
         storeLinks={STORE_LINKS}
-        primaryCta={{ label: t('buttons.startJourney', { ns: 'common' }), href: '/contact' }}
+        primaryCta={{
+          label: t('buttons.startJourney', { ns: 'common' }),
+          href: '/contact',
+        }}
         secondaryCta={{ label: 'Explore product tour', href: '/features' }}
       />
 

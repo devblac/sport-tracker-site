@@ -32,7 +32,11 @@ const statusBadgeVariant = (status: RoadmapQuarter['status']) => {
   }
 };
 
-export const RoadmapPreviewSection: React.FC<RoadmapPreviewProps> = ({ heading, description, quarters }) => (
+export const RoadmapPreviewSection: React.FC<RoadmapPreviewProps> = ({
+  heading,
+  description,
+  quarters,
+}) => (
   <Section variant="default" spacing="default">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
@@ -43,20 +47,30 @@ export const RoadmapPreviewSection: React.FC<RoadmapPreviewProps> = ({ heading, 
       </p>
     </div>
     <div className="grid gap-6 md:grid-cols-3">
-      {quarters.map((quarter) => (
+      {quarters.map(quarter => (
         <div
           key={quarter.id}
           className="group rounded-2xl border border-slate-800 bg-slate-800/50 p-6 shadow-md hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/50 transition-all duration-300"
         >
           <div className="flex items-center justify-between text-xs text-slate-400 mb-4">
-            <span className="font-semibold uppercase tracking-wider">{quarter.period}</span>
-            <Badge variant={statusBadgeVariant(quarter.status)} size="sm" className="gap-1">
+            <span className="font-semibold uppercase tracking-wider">
+              {quarter.period}
+            </span>
+            <Badge
+              variant={statusBadgeVariant(quarter.status)}
+              size="sm"
+              className="gap-1"
+            >
               {statusIcon(quarter.status)}
               {quarter.status.replace('-', ' ')}
             </Badge>
           </div>
-          <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">{quarter.title}</h3>
-          <p className="text-sm text-slate-300 leading-relaxed mb-4">{quarter.description}</p>
+          <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
+            {quarter.title}
+          </h3>
+          <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            {quarter.description}
+          </p>
           <ul className="space-y-2 text-sm text-slate-400">
             {quarter.features.slice(0, 3).map(feature => (
               <li key={feature} className="flex items-start gap-2">

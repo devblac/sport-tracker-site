@@ -144,7 +144,12 @@ export function Footer({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={cn('bg-slate-950 dark:bg-slate-950 border-t border-slate-800', className)}>
+    <footer
+      className={cn(
+        'bg-slate-950 dark:bg-slate-950 border-t border-slate-800',
+        className
+      )}
+    >
       <div className="max-w-5xl mx-auto px-6 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

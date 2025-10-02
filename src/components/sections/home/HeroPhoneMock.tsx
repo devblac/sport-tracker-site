@@ -27,7 +27,10 @@ const HERO_CARDS = [
 
 export const HeroPhoneMock: React.FC = () => (
   <div className="relative mx-auto mt-16 w-full max-w-xs rounded-[2.5rem] border border-white/15 bg-white/5 p-6 text-white backdrop-blur-2xl shadow-[0_40px_80px_-40px_rgba(8,15,35,0.9)]">
-    <div className="absolute inset-0 rounded-[2.5rem] border border-white/10" aria-hidden="true" />
+    <div
+      className="absolute inset-0 rounded-[2.5rem] border border-white/10"
+      aria-hidden="true"
+    />
     <div className="space-y-6">
       <div className="flex items-start justify-between text-[11px] uppercase tracking-[0.3em] text-white/60">
         <span>Upper push</span>
@@ -44,7 +47,9 @@ export const HeroPhoneMock: React.FC = () => (
             className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 px-4 py-3"
           >
             <div className="flex items-center gap-3">
-              <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${item.color}`}>
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-xl ${item.color}`}
+              >
                 <item.icon className="h-5 w-5 text-white" />
               </div>
               <div>
@@ -57,7 +62,8 @@ export const HeroPhoneMock: React.FC = () => (
         ))}
       </div>
       <div className="rounded-2xl border border-white/15 bg-gradient-to-r from-blue-500/30 to-purple-500/30 p-4 text-sm text-white/80">
-        AI insight: You hit a 4-week volume PR on bench. Schedule a deload set this weekend for max recovery.
+        AI insight: You hit a 4-week volume PR on bench. Schedule a deload set
+        this weekend for max recovery.
       </div>
     </div>
   </div>

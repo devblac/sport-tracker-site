@@ -29,7 +29,8 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-interface PageLayoutWrapperProps extends React.ComponentProps<typeof PageLayout> {
+interface PageLayoutWrapperProps
+  extends React.ComponentProps<typeof PageLayout> {
   children?: React.ReactNode;
 }
 

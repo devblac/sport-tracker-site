@@ -76,9 +76,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
           <span className="text-4xl font-bold text-foreground">
             {plan.price}
           </span>
-          <span className="text-muted-foreground ml-2">
-            {plan.period}
-          </span>
+          <span className="text-muted-foreground ml-2">{plan.period}</span>
         </div>
 
         <Typography variant="body" className="text-muted-foreground">
@@ -92,10 +90,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, onSelect }) => {
             <div className="flex-shrink-0 mt-0.5">
               <Check className="w-5 h-5 text-green-500" />
             </div>
-            <Typography
-              variant="small"
-              className="text-foreground/90"
-            >
+            <Typography variant="small" className="text-foreground/90">
               {feature}
             </Typography>
           </div>
@@ -183,9 +178,7 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
                   {t('comparison.pricing')}
                 </td>
                 <td className="text-center p-6">
-                  <div className="font-bold text-2xl text-emerald-600">
-                    $0
-                  </div>
+                  <div className="font-bold text-2xl text-emerald-600">$0</div>
                   <div className="text-sm text-muted-foreground">
                     {t('plans.free.period')}
                   </div>
@@ -212,9 +205,7 @@ const FeatureComparisonTable: React.FC<FeatureComparisonTableProps> = ({
                   key={feature.key}
                   className={`border-b border-border hover:bg-muted/30 transition-colors ${index % 2 === 0 ? 'bg-background' : 'bg-muted/20'}`}
                 >
-                  <td className="p-6 text-foreground/90">
-                    {feature.label}
-                  </td>
+                  <td className="p-6 text-foreground/90">{feature.label}</td>
                   <td className="text-center p-6">
                     {feature.free ? (
                       <Check
@@ -347,10 +338,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
           id={`faq-answer-${question}`}
           className="mt-4 pt-4 border-t border-border"
         >
-          <Typography
-            variant="body"
-            className="text-muted-foreground"
-          >
+          <Typography variant="body" className="text-muted-foreground">
             {answer}
           </Typography>
         </div>
@@ -691,9 +679,16 @@ export const PricingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-blue-950 dark:to-purple-950 relative overflow-hidden">
       {/* Animated glow orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
-      
+      <div
+        className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: '1s' }}
+        aria-hidden="true"
+      />
+
       <SEO
         title={tCommon('seo.pricingPage.title')}
         description={tCommon('seo.pricingPage.description')}
@@ -808,8 +803,11 @@ export const PricingPage: React.FC = () => {
         {/* Final Upgrade CTA */}
         <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 rounded-2xl p-8 mb-16 text-center text-white overflow-hidden group hover:shadow-2xl transition-all duration-500">
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl group-hover:blur-2xl transition-all" aria-hidden="true" />
-          
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-3xl group-hover:blur-2xl transition-all"
+            aria-hidden="true"
+          />
+
           <div className="relative z-10">
             <Typography
               variant="h3"

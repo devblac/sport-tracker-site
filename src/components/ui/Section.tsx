@@ -29,11 +29,16 @@ export const Section: React.FC<SectionProps> = ({
   spacing = 'default',
 }) => {
   return (
-    <section className={cn(VARIANT_CLASSES[variant], SPACING_CLASSES[spacing], className)}>
+    <section
+      className={cn(
+        VARIANT_CLASSES[variant],
+        SPACING_CLASSES[spacing],
+        className
+      )}
+    >
       <div className={cn('max-w-5xl mx-auto px-6', innerClassName)}>
         {children}
       </div>
     </section>
   );
 };
-
