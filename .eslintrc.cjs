@@ -20,6 +20,23 @@ module.exports = {
     'prettier/prettier': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'react/prop-types': 'off',
+    '@typescript-eslint/no-explicit-any': [
+      'warn',
+      {
+        ignoreRestArgs: true,
+        // Allow 'any' in test files
+        ignorePatterns: ['**/*.test.ts', '**/*.test.tsx', '**/test/**/*']
+      }
+    ],
+    // Allow require imports in test files
+    '@typescript-eslint/no-require-imports': [
+      'error',
+      {
+        allow: ['**/*.test.ts', '**/*.test.tsx', '**/test/**/*']
+      }
+    ],
+    // Allow var in .d.ts files
+    'no-var': ['error', { 'ignorePattern': '\\.d\\.ts$' }]
   },
   settings: {
     react: {
