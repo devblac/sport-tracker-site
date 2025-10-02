@@ -162,7 +162,7 @@ export function CommunityPage() {
         keywords={t('seo.keywords', { ns: 'community' }).split(',')}
       />
 
-      <div className="py-12 sm:py-16 lg:py-20">
+      <main className="py-12 sm:py-16 lg:py-20">
         <Container size="xl" padding="md">
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -319,7 +319,7 @@ export function CommunityPage() {
             </div>
           </div>
         </Container>
-      </div>
+      </main>
     </>
   );
 }

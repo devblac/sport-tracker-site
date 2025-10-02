@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SEO } from '../components/SEO';
+import { PageLayout } from '../components/layout/PageLayout';
 import { useTranslations } from '../hooks/useTranslations';
 import { Container } from '../components/ui/Container';
 import { Typography } from '../components/ui/Typography';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { createWebPageSchema } from '../utils/structuredData';
+// import { createWebPageSchema } from '../utils/structuredData';
 import {
   CheckCircle,
   Clock,
@@ -45,8 +45,8 @@ interface LongTermGoal {
 
 const RoadmapPage: React.FC = () => {
   const { t } = useTranslations('roadmap');
-  const { t: tCommon, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const { t: tCommon } = useTranslation();
+  // const currentLanguage = i18n.language;
   const [activeSection, setActiveSection] = useState<string>('');
 
   // Smooth scroll to section
@@ -169,9 +169,10 @@ const RoadmapPage: React.FC = () => {
     },
   ];
 
-  const longTermGoals: LongTermGoal[] = t('longTerm.goals', {
-    returnObjects: true,
-  }) as LongTermGoal[];
+  const longTermGoals: LongTermGoal[] =
+    (t('longTerm.goals', {
+      returnObjects: true,
+    }) as LongTermGoal[]) || [];
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -215,35 +216,26 @@ const RoadmapPage: React.FC = () => {
     return gradients[index % gradients.length];
   };
 
-  const structuredData = createWebPageSchema(
-    tCommon('seo.roadmapPage.title'),
-    tCommon('seo.roadmapPage.description'),
-    typeof window !== 'undefined'
-      ? window.location.href
-      : 'https://liftfire.app/roadmap',
-    currentLanguage
-  );
-
   return (
-    <div className="py-16 sm:py-24">
-      <SEO
-        title={tCommon('seo.roadmapPage.title')}
-        description={tCommon('seo.roadmapPage.description')}
-        keywords={tCommon('seo.defaultKeywords').split(',')}
-        structuredData={structuredData}
-        type="website"
-      />
+    <PageLayout
+      meta={{
+        title: tCommon('seo.roadmapPage.title'),
+        description: tCommon('seo.roadmapPage.description'),
+        keywords: tCommon('seo.defaultKeywords').split(','),
+      }}
+    >
       <Container>
         {/* Header Section */}
         <div className="text-center mb-16">
           <Typography variant="h1" className="mb-4">
-            {t('title')}
+            Our Journey Ahead: The LiftFire Roadmap
           </Typography>
           <Typography
             variant="lead"
             className="text-muted-foreground max-w-3xl mx-auto mb-8"
           >
-            {t('subtitle')}
+            See what's next for LiftFire. Our future plans, upcoming features,
+            and long-term vision.
           </Typography>
 
           {/* Navigation Menu */}
@@ -335,7 +327,10 @@ const RoadmapPage: React.FC = () => {
                             Key Features
                           </Typography>
                           <ul className="space-y-2">
-                            {quarter.features.map((feature, featureIndex) => (
+                            {(Array.isArray(quarter.features)
+                              ? quarter.features
+                              : []
+                            ).map((feature, featureIndex) => (
                               <li
                                 key={featureIndex}
                                 className="flex items-start gap-2"
@@ -362,22 +357,23 @@ const RoadmapPage: React.FC = () => {
                             Success Metrics
                           </Typography>
                           <ul className="space-y-2">
-                            {quarter.successMetrics.map(
-                              (metric, metricIndex) => (
-                                <li
-                                  key={metricIndex}
-                                  className="flex items-start gap-2"
+                            {(Array.isArray(quarter.successMetrics)
+                              ? quarter.successMetrics
+                              : []
+                            ).map((metric, metricIndex) => (
+                              <li
+                                key={metricIndex}
+                                className="flex items-start gap-2"
+                              >
+                                <ArrowRight className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                <Typography
+                                  variant="small"
+                                  className="text-muted-foreground"
                                 >
-                                  <ArrowRight className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                                  <Typography
-                                    variant="small"
-                                    className="text-muted-foreground"
-                                  >
-                                    {metric}
-                                  </Typography>
-                                </li>
-                              )
-                            )}
+                                  {metric}
+                                </Typography>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
@@ -408,40 +404,42 @@ const RoadmapPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {longTermGoals.map((goal, index) => (
-              <Card
-                key={index}
-                className={`p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getVisionCardGradient(index)} border-0`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-full bg-white/10 backdrop-blur-sm">
-                    {getLongTermIcon(index)}
-                  </div>
-                  <div className="flex-1">
-                    <Typography
-                      variant="h4"
-                      className="mb-2 flex items-center gap-2"
-                    >
-                      {goal.title}
-                      <Star className="w-4 h-4 text-yellow-500" />
-                    </Typography>
-                    <Typography
-                      variant="body"
-                      className="text-muted-foreground mb-4"
-                    >
-                      {goal.description}
-                    </Typography>
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm text-foreground">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {goal.timeline}
-                      </span>
-                      <ChevronDown className="w-4 h-4 text-muted-foreground" />
+            {(Array.isArray(longTermGoals) ? longTermGoals : []).map(
+              (goal, index) => (
+                <Card
+                  key={index}
+                  className={`p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-br ${getVisionCardGradient(index)} border-0`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 p-3 rounded-full bg-white/10 backdrop-blur-sm">
+                      {getLongTermIcon(index)}
+                    </div>
+                    <div className="flex-1">
+                      <Typography
+                        variant="h4"
+                        className="mb-2 flex items-center gap-2"
+                      >
+                        {goal.title}
+                        <Star className="w-4 h-4 text-yellow-500" />
+                      </Typography>
+                      <Typography
+                        variant="body"
+                        className="text-muted-foreground mb-4"
+                      >
+                        {goal.description}
+                      </Typography>
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm text-foreground">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {goal.timeline}
+                        </span>
+                        <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              )
+            )}
           </div>
 
           {/* Vision Statement */}
@@ -514,8 +512,9 @@ const RoadmapPage: React.FC = () => {
                   How We Listen
                 </Typography>
                 <ul className="space-y-3">
-                  {(
-                    t('community.ways', { returnObjects: true }) as string[]
+                  {(Array.isArray(t('community.ways', { returnObjects: true }))
+                    ? t('community.ways', { returnObjects: true })
+                    : []
                   ).map((way, index) => (
                     <li
                       key={index}
@@ -646,10 +645,11 @@ const RoadmapPage: React.FC = () => {
                   {t('updates.social.description')}
                 </Typography>
                 <div className="flex justify-center gap-3 flex-wrap">
-                  {(
-                    t('updates.social.platforms', {
-                      returnObjects: true,
-                    }) as string[]
+                  {(Array.isArray(
+                    t('updates.social.platforms', { returnObjects: true })
+                  )
+                    ? t('updates.social.platforms', { returnObjects: true })
+                    : []
                   ).map((platform, index) => (
                     <Button
                       key={index}
@@ -666,8 +666,9 @@ const RoadmapPage: React.FC = () => {
           </Card>
         </div>
       </Container>
-    </div>
+    </PageLayout>
   );
 };
 
+export { RoadmapPage };
 export default RoadmapPage;

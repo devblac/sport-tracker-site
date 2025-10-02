@@ -145,6 +145,7 @@ export function Footer({
 
   return (
     <footer
+      role="contentinfo"
       className={cn(
         'bg-slate-950 dark:bg-slate-950 border-t border-slate-800',
         className

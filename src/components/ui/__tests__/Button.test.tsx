@@ -7,37 +7,51 @@ describe('Button', () => {
     render(<Button>Click me</Button>);
     const button = screen.getByRole('button', { name: /click me/i });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveClass('bg-primary-500'); // primary variant
-    expect(button).toHaveClass('h-11'); // md size
+    expect(button).toHaveClass(
+      'bg-gradient-to-r',
+      'from-blue-600',
+      'to-blue-700'
+    ); // primary variant
+    expect(button).toHaveClass('h-12', 'px-6', 'text-base'); // md size
   });
 
   it('renders with primary variant', () => {
     render(<Button variant="primary">Primary Button</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-primary-500', 'text-white');
+    expect(button).toHaveClass(
+      'bg-gradient-to-r',
+      'from-blue-600',
+      'to-blue-700',
+      'text-white'
+    );
   });
 
   it('renders with secondary variant', () => {
     render(<Button variant="secondary">Secondary Button</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-secondary-500', 'text-white');
+    expect(button).toHaveClass(
+      'bg-gradient-to-r',
+      'from-purple-600',
+      'to-purple-700',
+      'text-white'
+    );
   });
 
   it('renders with ghost variant', () => {
     render(<Button variant="ghost">Ghost Button</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('text-primary-600');
+    expect(button).toHaveClass('text-blue-600', 'hover:bg-blue-50');
   });
 
   it('renders with different sizes', () => {
     const { rerender } = render(<Button size="sm">Small</Button>);
-    expect(screen.getByRole('button')).toHaveClass('h-9', 'px-3', 'text-sm');
+    expect(screen.getByRole('button')).toHaveClass('h-10', 'px-4', 'text-sm');
 
     rerender(<Button size="md">Medium</Button>);
-    expect(screen.getByRole('button')).toHaveClass('h-11', 'px-6', 'text-base');
+    expect(screen.getByRole('button')).toHaveClass('h-12', 'px-6', 'text-base');
 
     rerender(<Button size="lg">Large</Button>);
-    expect(screen.getByRole('button')).toHaveClass('h-13', 'px-8', 'text-lg');
+    expect(screen.getByRole('button')).toHaveClass('h-14', 'px-8', 'text-lg');
   });
 
   it('handles click events', async () => {

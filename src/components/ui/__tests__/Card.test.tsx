@@ -13,33 +13,62 @@ describe('Card', () => {
     render(<Card>Card content</Card>);
     const card = screen.getByText('Card content');
     expect(card).toBeInTheDocument();
-    expect(card).toHaveClass('bg-white', 'dark:bg-gray-900', 'p-6'); // default variant and md padding
+    expect(card).toHaveClass(
+      'bg-white',
+      'dark:bg-slate-900',
+      'border',
+      'border-slate-200',
+      'dark:border-slate-800',
+      'shadow-sm'
+    );
   });
 
   it('renders with different variants', () => {
     const { rerender } = render(<Card variant="default">Default Card</Card>);
     expect(screen.getByText('Default Card')).toHaveClass(
       'bg-white',
+      'dark:bg-slate-900',
       'border',
-      'border-gray-200'
+      'border-slate-200',
+      'dark:border-slate-800'
     );
 
     rerender(<Card variant="elevated">Elevated Card</Card>);
     expect(screen.getByText('Elevated Card')).toHaveClass(
       'shadow-lg',
-      'hover:shadow-xl'
+      'hover:shadow-2xl',
+      'border',
+      'border-slate-100',
+      'dark:border-slate-800'
     );
 
     rerender(<Card variant="outlined">Outlined Card</Card>);
     expect(screen.getByText('Outlined Card')).toHaveClass(
       'bg-transparent',
-      'border-2'
+      'border-2',
+      'border-slate-200',
+      'dark:border-slate-700'
+    );
+
+    rerender(<Card variant="glass">Glass Card</Card>);
+    expect(screen.getByText('Glass Card')).toHaveClass(
+      'backdrop-blur-md',
+      'bg-white/10',
+      'dark:bg-slate-900/10',
+      'border',
+      'border-white/20',
+      'dark:border-slate-700/20'
     );
   });
 
   it('renders with different padding sizes', () => {
     const { rerender } = render(<Card padding="none">No padding</Card>);
-    expect(screen.getByText('No padding')).not.toHaveClass('p-4', 'p-6', 'p-8');
+    expect(screen.getByText('No padding')).not.toHaveClass(
+      'p-4',
+      'p-6',
+      'p-8',
+      'p-10'
+    );
 
     rerender(<Card padding="sm">Small padding</Card>);
     expect(screen.getByText('Small padding')).toHaveClass('p-4');
@@ -49,6 +78,25 @@ describe('Card', () => {
 
     rerender(<Card padding="lg">Large padding</Card>);
     expect(screen.getByText('Large padding')).toHaveClass('p-8');
+
+    rerender(<Card padding="xl">Extra large padding</Card>);
+    expect(screen.getByText('Extra large padding')).toHaveClass('p-10');
+  });
+
+  it('applies hover effects when hover is true', () => {
+    render(<Card hover>Hover Card</Card>);
+    expect(screen.getByText('Hover Card')).toHaveClass(
+      'hover:scale-[1.02]',
+      'hover:-translate-y-1'
+    );
+  });
+
+  it('does not apply hover effects when hover is false', () => {
+    render(<Card hover={false}>No Hover Card</Card>);
+    expect(screen.getByText('No Hover Card')).not.toHaveClass(
+      'hover:scale-[1.02]',
+      'hover:-translate-y-1'
+    );
   });
 
   it('applies custom className', () => {
@@ -72,14 +120,25 @@ describe('Card sub-components', () => {
     const title = screen.getByText('Card Title');
     expect(title).toBeInTheDocument();
     expect(title.tagName).toBe('H3');
-    expect(title).toHaveClass('text-xl', 'font-semibold');
+    expect(title).toHaveClass(
+      'text-xl',
+      'font-semibold',
+      'leading-none',
+      'tracking-tight',
+      'text-gray-900',
+      'dark:text-gray-100'
+    );
   });
 
   it('renders CardDescription correctly', () => {
     render(<CardDescription>Card description</CardDescription>);
     const description = screen.getByText('Card description');
     expect(description).toBeInTheDocument();
-    expect(description).toHaveClass('text-sm', 'text-gray-600');
+    expect(description).toHaveClass(
+      'text-sm',
+      'text-gray-600',
+      'dark:text-gray-400'
+    );
   });
 
   it('renders CardContent correctly', () => {

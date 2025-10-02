@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/test-utils';
 import { Footer } from '../Footer';
 
 describe('Footer', () => {
@@ -18,7 +18,7 @@ describe('Footer', () => {
     // Check for some default links
     expect(screen.getByText('Features')).toBeInTheDocument();
     expect(screen.getByText('Pricing')).toBeInTheDocument();
-    expect(screen.getByText('Discord')).toBeInTheDocument();
+    expect(screen.getByText('Discord Server')).toBeInTheDocument();
     expect(screen.getByText('Privacy Policy')).toBeInTheDocument();
   });
 
@@ -125,10 +125,10 @@ describe('Footer', () => {
   it('renders LiftFire logo in footer', () => {
     render(<Footer />);
 
-    // Check for the logo element (L in a colored box)
-    const logoText = screen.getByText('L');
+    // Check for the logo element (LF in a colored box)
+    const logoText = screen.getByText('LF');
     expect(logoText).toBeInTheDocument();
-    expect(logoText.parentElement).toHaveClass('bg-gradient-brand');
+    expect(logoText).toHaveClass('text-white', 'font-bold', 'text-sm');
   });
 
   it('social links open in new tab', () => {

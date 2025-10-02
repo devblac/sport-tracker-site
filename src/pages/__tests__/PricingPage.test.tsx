@@ -1,8 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../test/test-utils';
 import { PricingPage } from '../PricingPage';
-import { ThemeProvider } from '../../contexts/ThemeContext';
-import { LanguageProvider } from '../../contexts/LanguageContext';
+// Using test-utils for providers
 import '../../i18n/config';
 
 // Mock the useTranslations hook
@@ -149,17 +148,11 @@ vi.mock('../../hooks/useTranslations', () => ({
   }),
 }));
 
-const renderWithProviders = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider>
-      <LanguageProvider>{component}</LanguageProvider>
-    </ThemeProvider>
-  );
-};
+// Using custom render from test-utils
 
 describe('PricingPage', () => {
   it('renders the pricing page title and subtitle', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getByText('Choose Your Fitness Plan')).toBeInTheDocument();
     expect(
@@ -170,7 +163,7 @@ describe('PricingPage', () => {
   });
 
   it('displays all three pricing plans', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getAllByText('Free').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Pro').length).toBeGreaterThan(0);
@@ -178,7 +171,7 @@ describe('PricingPage', () => {
   });
 
   it('shows correct pricing for each plan', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getAllByText('$0').length).toBeGreaterThan(0);
     expect(screen.getAllByText('$9.99').length).toBeGreaterThan(0);
@@ -186,13 +179,13 @@ describe('PricingPage', () => {
   });
 
   it('highlights the Pro plan as most popular', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getAllByText('Most Popular').length).toBeGreaterThan(0);
   });
 
   it('displays feature lists for each plan', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Free plan features
     expect(
@@ -216,7 +209,7 @@ describe('PricingPage', () => {
   });
 
   it('shows correct CTA buttons for each plan', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getAllByText('Start Free').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Choose Pro').length).toBeGreaterThan(0);
@@ -228,7 +221,7 @@ describe('PricingPage', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
 
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     const freeButtons = screen.getAllByText('Start Free');
     fireEvent.click(freeButtons[0]); // Click the first one (from pricing cards)
@@ -243,7 +236,7 @@ describe('PricingPage', () => {
   });
 
   it('displays FAQ section', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getByText('Frequently Asked Questions')).toBeInTheDocument();
     expect(
@@ -255,7 +248,7 @@ describe('PricingPage', () => {
   });
 
   it('expands and collapses FAQ items', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     const faqQuestion = screen.getByText("What's included in the free plan?");
 
@@ -288,7 +281,7 @@ describe('PricingPage', () => {
   });
 
   it('displays money-back guarantee section', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getByText('30-Day Money-Back Guarantee')).toBeInTheDocument();
     expect(
@@ -299,7 +292,7 @@ describe('PricingPage', () => {
   });
 
   it('displays contact section with email and Discord links', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getByText('Need Help Choosing?')).toBeInTheDocument();
     expect(screen.getByText('support@liftfire.app')).toBeInTheDocument();
@@ -309,7 +302,7 @@ describe('PricingPage', () => {
   it('handles email and Discord link clicks', () => {
     const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
 
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     const emailButton = screen.getByText('support@liftfire.app');
     const discordButton = screen.getByText('Join our Discord community');
@@ -327,7 +320,7 @@ describe('PricingPage', () => {
   });
 
   it('has proper accessibility attributes', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Check that buttons are properly labeled
     const buttons = screen.getAllByRole('button');
@@ -341,7 +334,7 @@ describe('PricingPage', () => {
   });
 
   it('displays all required pricing features according to requirements', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Requirement 3.1: Free tier features
     expect(
@@ -382,7 +375,7 @@ describe('PricingPage', () => {
   });
 
   it('shows correct pricing amounts as per requirements', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Requirement 3.1, 3.2, 3.3: Correct pricing
     expect(screen.getAllByText('$0').length).toBeGreaterThan(0); // Free (appears in cards and table)
@@ -391,7 +384,7 @@ describe('PricingPage', () => {
   });
 
   it('displays feature comparison table', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(screen.getByText('Compare All Features')).toBeInTheDocument();
     expect(
@@ -402,7 +395,7 @@ describe('PricingPage', () => {
   });
 
   it('shows checkmarks and X marks for feature availability', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Should have checkmarks for included features and X marks for excluded features
     const checkmarks = screen.getAllByTestId('check-icon');
@@ -413,7 +406,7 @@ describe('PricingPage', () => {
   });
 
   it('displays comparison table with proper structure', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Check table headers
     expect(screen.getByText('Feature')).toBeInTheDocument();
@@ -431,7 +424,7 @@ describe('PricingPage', () => {
   });
 
   it('shows feature comparison with correct availability per tier', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Basic features should be available in all tiers
     expect(
@@ -462,7 +455,7 @@ describe('PricingPage', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
 
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Find buttons in the comparison table (there should be multiple "Start Free" buttons)
     const startFreeButtons = screen.getAllByText('Start Free');
@@ -485,7 +478,7 @@ describe('PricingPage', () => {
   });
 
   it('displays upgrade encouragement CTAs', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(
       screen.getByText('Ready to Supercharge Your Workouts?')
@@ -500,7 +493,7 @@ describe('PricingPage', () => {
   });
 
   it('displays final CTA section', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     expect(
       screen.getByText('Start Your Fitness Transformation Today')
@@ -518,7 +511,7 @@ describe('PricingPage', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
 
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     // Test upgrade section CTAs
     const startWithProButtons = screen.getAllByText('Start with Pro');
@@ -553,7 +546,7 @@ describe('PricingPage', () => {
   });
 
   it('has smooth FAQ animations with proper accessibility', () => {
-    renderWithProviders(<PricingPage />);
+    render(<PricingPage />);
 
     const faqQuestion = screen.getByText("What's included in the free plan?");
     const faqButton = faqQuestion.closest('button');

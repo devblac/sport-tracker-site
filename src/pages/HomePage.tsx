@@ -96,7 +96,7 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div>
+    <main>
       <SEO
         title={t('seo.homePage.title')}
         description={t('seo.homePage.description')}
@@ -135,6 +135,6 @@ export const HomePage: React.FC = () => {
       <CommunityAiSection />
 
       <FinalCTA />
-    </div>
+    </main>
   );
 };

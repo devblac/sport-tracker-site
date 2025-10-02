@@ -385,7 +385,7 @@ export const FeaturesPage: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+    <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <SEO
         title={tCommon('seo.featuresPage.title')}
         description={tCommon('seo.featuresPage.description')}
@@ -676,6 +676,6 @@ export const FeaturesPage: React.FC = () => {
           </Card>
         </Container>
       </section>
-    </div>
+    </main>
   );
 };

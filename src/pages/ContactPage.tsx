@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container } from '../components/ui/Container';
+import { PageLayout } from '../components/layout/PageLayout';
 import { Heading, Text } from '../components/ui/Typography';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { SEO } from '../components/SEO';
 import { useTranslation } from 'react-i18next';
 
 // Contact icons
@@ -207,13 +207,13 @@ export function ContactPage() {
   };
 
   return (
-    <>
-      <SEO
-        title={t('seo.title', { ns: 'contact' })}
-        description={t('seo.description', { ns: 'contact' })}
-        keywords={t('seo.keywords', { ns: 'contact' }).split(',')}
-      />
-
+    <PageLayout
+      meta={{
+        title: t('seo.title', { ns: 'contact' }),
+        description: t('seo.description', { ns: 'contact' }),
+        keywords: t('seo.keywords', { ns: 'contact' }).split(','),
+      }}
+    >
       <div className="py-12 sm:py-16 lg:py-20">
         <Container size="xl" padding="md">
           {/* Hero Section */}
@@ -314,7 +314,7 @@ export function ContactPage() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" role="form">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -452,7 +452,7 @@ export function ContactPage() {
           </div>
         </Container>
       </div>
-    </>
+    </PageLayout>
   );
 }
 
