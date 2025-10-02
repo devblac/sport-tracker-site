@@ -467,7 +467,7 @@ describe('PricingPage', () => {
     // Find buttons in the comparison table (there should be multiple "Start Free" buttons)
     const startFreeButtons = screen.getAllByText('Start Free');
     const chooseProButtons = screen.getAllByText('Choose Pro');
-    const chooseEliteButtons = screen.getAllByText('Choose Elite');
+    // Elite buttons not used in this test
 
     // Click on one of the buttons (should be from comparison table)
     if (startFreeButtons.length > 1) {

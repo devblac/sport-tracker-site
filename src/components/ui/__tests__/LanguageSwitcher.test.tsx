@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { LanguageSwitcher } from '../LanguageSwitcher';
-import { LanguageProvider } from '../../../contexts/LanguageContext';
+// LanguageProvider is mocked in vi.mock below
 import '../../../test/i18n-setup';
 
 // Mock the language context

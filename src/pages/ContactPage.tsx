@@ -199,7 +199,7 @@ export function ContactPage() {
         subject: '',
         message: '',
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

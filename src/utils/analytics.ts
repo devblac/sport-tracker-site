@@ -338,7 +338,7 @@ class AnalyticsService {
       }
 
       localStorage.setItem('liftfire_analytics', JSON.stringify(analytics));
-    } catch (e) {
+    } catch {
       // localStorage might be full or unavailable
     }
   }

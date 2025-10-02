@@ -155,7 +155,7 @@ describe('ContactPage', () => {
   it('displays all category options in the select dropdown', () => {
     renderWithProviders(<ContactPage />);
 
-    const categorySelect = screen.getByLabelText(/category/i);
+    // Category select tested in other test cases
 
     expect(
       screen.getByRole('option', { name: /general support/i })

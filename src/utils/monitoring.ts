@@ -155,7 +155,7 @@ class MonitoringService {
           this.reportWebVital('LCP', lastEntry.startTime);
         });
         observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      } catch (e) {
+      } catch {
         // PerformanceObserver not supported
       }
 
@@ -171,7 +171,7 @@ class MonitoringService {
           });
         });
         observer.observe({ entryTypes: ['first-input'] });
-      } catch (e) {
+      } catch {
         // PerformanceObserver not supported
       }
 
@@ -188,7 +188,7 @@ class MonitoringService {
           this.reportWebVital('CLS', clsValue);
         });
         observer.observe({ entryTypes: ['layout-shift'] });
-      } catch (e) {
+      } catch {
         // PerformanceObserver not supported
       }
     }
@@ -244,7 +244,7 @@ class MonitoringService {
       }
 
       localStorage.setItem('liftfire_errors', JSON.stringify(errors));
-    } catch (e) {
+    } catch {
       // localStorage might be full or unavailable
     }
   }
@@ -262,7 +262,7 @@ class MonitoringService {
       }
 
       localStorage.setItem('liftfire_performance', JSON.stringify(allMetrics));
-    } catch (e) {
+    } catch {
       // localStorage might be full or unavailable
     }
   }
