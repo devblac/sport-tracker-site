@@ -19,10 +19,10 @@ const log = {
 };
 
 // Configuration
-const PRODUCTION_URL = 'https://liftfire.app';
+const PRODUCTION_URL = 'https://liftfiregymtracker.netlify.app';
 const STAGING_URL = 'https://develop--liftfire.netlify.app';
 const HEALTH_CHECK_INTERVAL = 5 * 60 * 1000; // 5 minutes
-const ALERT_EMAIL = 'alerts@liftfire.app';
+const ALERT_EMAIL = 'alerts@liftfire.netlify.app';
 
 /**
  * Setup monitoring alerts and health checks

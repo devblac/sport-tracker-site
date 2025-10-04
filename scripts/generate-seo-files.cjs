@@ -14,7 +14,7 @@ try {
 
 // Generate sitemap.xml
 const generateSitemap = () => {
-  const baseUrl = 'https://liftfire.app';
+  const baseUrl = 'https://liftfiregymtracker.netlify..app';
   const lastmod = new Date().toISOString().split('T')[0];
 
   const pages = [
