@@ -11,46 +11,36 @@
   }
 
 [build.processing]
-  # Skip Netlify's processing since we handle optimization in CI
-  skip_processing = false
+  # Disable Netlify's processing to avoid imagemin errors (hackathon project)
+  skip_processing = true
 
-[build.processing.css]
-  bundle = true
-  minify = true
+# Alternative: Enable processing but fix the imagemin command
+# [build.processing]
+#   skip_processing = false
 
-[build.processing.js]
-  bundle = true
-  minify = true
+# [build.processing.css]
+#   bundle = true
+#   minify = true
 
-[build.processing.html]
-  pretty_urls = true
+# [build.processing.js]
+#   bundle = true
+#   minify = true
 
-[build.processing.images]
-  compress = true
+# [build.processing.html]
+#   pretty_urls = true
 
-# Production site settings
-[context.production]
-  command = "npm run build"
-  
-  [context.production.environment]
-    NODE_ENV = "production"
-    VITE_APP_ENV = "production"
+# [build.processing.images]
+#   compress = true
 
-# Preview/staging settings
-[context.deploy-preview]
-  command = "npm run build"
-  
-  [context.deploy-preview.environment]
-    NODE_ENV = "staging"
-    VITE_APP_ENV = "staging"
+# Build contexts (already defined above)
+# [context.production]
+#   command = "npm run build"
 
-# Branch-specific settings
-[context.develop]
-  command = "npm run build"
-  
-  [context.develop.environment]
-    NODE_ENV = "development"
-    VITE_APP_ENV = "development"
+# [context.deploy-preview]
+#   command = "npm run build"
+
+# [context.develop]
+#   command = "npm run build"
 
 # Headers for security and performance
 [[headers]]
@@ -111,22 +101,11 @@
   to = "/404.html"
   status = 404
 
-# Prerender settings for better SEO
-[build.environment]
-  # Enable prerendering for static pages
-  NITRO_PRESET = "netlify"
+# Additional build environment variables (if needed)
+# [build.environment]
+#   CUSTOM_VAR = "value"
 
-# Form handling (if contact forms are added)
-[build.processing.forms]
-  # Enable Netlify Forms processing
-  enabled = true
-
-# Functions configuration (for future serverless functions)
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-# Plugin configuration (relaxed for hackathon project)
+# Plugin configuration (minimal for hackathon project)
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
@@ -140,17 +119,15 @@
       "yandex"
     ]
 
-# Optional: Lighthouse plugin (disabled for faster builds)
-# [[plugins]]
-#   package = "@netlify/plugin-lighthouse"
-#
-#   [plugins.inputs.thresholds]
-#     performance = 0.7  # Relaxed thresholds for hackathon
-#     accessibility = 0.7
-#     best-practices = 0.7
-#     seo = 0.7
+# Additional environment variables for different contexts
+[context.production.environment]
+  NODE_ENV = "production"
+  VITE_APP_ENV = "production"
 
-# Additional production-specific environment variables can be added here
-# [context.production.environment]
-#   VITE_API_URL = "https://api.liftfire.app"
-#   VITE_ANALYTICS_ID = "your-analytics-id"
+[context.deploy-preview.environment]
+  NODE_ENV = "staging"
+  VITE_APP_ENV = "staging"
+
+[context.develop.environment]
+  NODE_ENV = "development"
+  VITE_APP_ENV = "development"
