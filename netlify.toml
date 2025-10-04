@@ -5,7 +5,7 @@
 
   # Environment variables for build
   environment = {
-    NODE_VERSION = "18",
+    NODE_VERSION = "22",
     # Legacy peer deps for compatibility with React 19
     NPM_CONFIG_LEGACY_PEER_DEPS = "true"
   }

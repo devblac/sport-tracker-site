@@ -61,7 +61,7 @@ CODECOV_TOKEN=your-codecov-token
 Set the following environment variables in Netlify:
 
 ```
-NODE_VERSION=18
+NODE_VERSION=22
 NODE_ENV=production
 VITE_APP_ENV=production
 ```
