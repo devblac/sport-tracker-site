@@ -6,38 +6,34 @@ This document outlines the deployment setup and CI/CD pipeline for the LiftFire 
 
 The project uses GitHub Actions for continuous integration and deployment to Netlify. The pipeline includes:
 
-- Code quality checks (TypeScript, ESLint, Prettier)
-- Automated testing with coverage reports
-- Build optimization and asset compression
-- Lighthouse CI for performance monitoring
-- Automated deployment to Netlify
-- Slack notifications for deployment status
+- **Relaxed quality checks** (TypeScript, ESLint, Prettier - continue even if they fail)
+- **Flexible testing** (tests run but don't block deployment)
+- **Simplified build process** (no complex asset optimization for hackathon)
+- **Direct deployment to Netlify** (your site will be at `liftfiregymtracker.netlify.app`)
+- **Optional monitoring** (Lighthouse CI and Slack notifications disabled for hackathon)
 
 ## Required Secrets
 
 Configure the following secrets in your GitHub repository settings:
 
-### Netlify Configuration
+### Netlify Configuration (Required)
 ```
-NETLIFY_SITE_ID=your-netlify-site-id
-NETLIFY_PREVIEW_SITE_ID=your-preview-site-id
+NETLIFY_SITE_ID=ebca9a58-f28e-4db4-bccd-4d9cd87474d5
+NETLIFY_PREVIEW_SITE_ID=your-preview-site-id (optional)
 NETLIFY_AUTH_TOKEN=your-netlify-auth-token
 ```
 
-### Lighthouse CI (Optional)
+### Optional Features (Disabled for Hackathon)
 ```
-LHCI_GITHUB_APP_TOKEN=your-lighthouse-github-app-token
-LHCI_SERVER_BASE_URL=your-lighthouse-server-url
-```
+# Lighthouse CI (disabled for hackathon)
+# LHCI_GITHUB_APP_TOKEN=your-lighthouse-github-app-token
+# LHCI_SERVER_BASE_URL=your-lighthouse-server-url
 
-### Slack Notifications (Optional)
-```
-SLACK_WEBHOOK_URL=your-slack-webhook-url
-```
+# Slack Notifications (disabled for hackathon)
+# SLACK_WEBHOOK_URL=your-slack-webhook-url
 
-### Code Coverage (Optional)
-```
-CODECOV_TOKEN=your-codecov-token
+# Code Coverage (optional)
+# CODECOV_TOKEN=your-codecov-token
 ```
 
 ## Netlify Setup

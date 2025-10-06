@@ -11,9 +11,9 @@
 [![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-[![Performance](https://img.shields.io/badge/Lighthouse-Performance_95+-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)
-[![Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility_98+-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)
-[![SEO](https://img.shields.io/badge/Lighthouse-SEO_100-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)
+[![Hackathon Project](https://img.shields.io/badge/Hackathon-Project-orange?logo=rocket)](https://github.com/topics/hackathon)
+[![React 19](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![PWA](https://img.shields.io/badge/PWA-Ready-purple?logo=pwa)](https://web.dev/progressive-web-apps/)
 
 [🌐 Live Demo](https://liftfire.app) • [📚 Documentation](docs/) • [🤝 Contributing](CONTRIBUTING.md) • [💬 Discord](https://discord.gg/liftfire)
@@ -27,11 +27,11 @@
 🎯 **Modern Tech Stack** - React 19, TypeScript, Tailwind CSS v4  
 🌍 **Internationalization** - English, Spanish with automatic detection  
 🎨 **Dark/Light Themes** - System preference detection + manual toggle  
-⚡ **Performance Optimized** - 95+ Lighthouse scores, Core Web Vitals  
-♿ **Accessibility First** - WCAG 2.1 AA compliant, screen reader tested  
+⚡ **Hackathon Optimized** - Fast builds, flexible deployment, minimal configuration
+♿ **Accessible Design** - Built with accessibility best practices  
 📱 **Mobile Responsive** - Mobile-first design, works on all devices  
 🔍 **SEO Optimized** - Structured data, meta tags, sitemap generation  
-🧪 **Comprehensive Testing** - 80%+ coverage with Vitest + React Testing Library  
+🧪 **Flexible Testing** - Essential component tests with Vitest + React Testing Library  
 🚀 **CI/CD Ready** - GitHub Actions, automated deployment to Netlify  
 🔒 **Security Focused** - Security headers, CSP, vulnerability scanning
 
@@ -129,10 +129,10 @@ VITE_MOCK_API=false
 - `npm run test:coverage` - Run tests with coverage report
 - `npm run test:ui` - Run tests with UI interface
 
-#### SEO & Performance
+#### SEO & Performance (Hackathon Mode)
 - `npm run generate:seo` - Generate sitemap and robots.txt
-- `npm run lighthouse` - Run Lighthouse performance audit
-- `npm run lighthouse:server` - Start Lighthouse CI server
+- `npm run lighthouse` - Run Lighthouse performance audit (optional)
+- `npm run lighthouse:server` - Start Lighthouse CI server (optional)
 
 #### CI/CD
 - `npm run ci:quality` - Run all quality checks (TypeScript, ESLint, Prettier, tests)
@@ -347,18 +347,18 @@ NETLIFY_SITE_ID=your-production-site-id
 NETLIFY_PREVIEW_SITE_ID=your-preview-site-id
 NETLIFY_AUTH_TOKEN=your-netlify-auth-token
 
-# Optional: Lighthouse CI
-LHCI_GITHUB_APP_TOKEN=your-lighthouse-token
+# Optional: Lighthouse CI (disabled for hackathon)
+# LHCI_GITHUB_APP_TOKEN=your-lighthouse-token
 
-# Optional: Slack Notifications
-SLACK_WEBHOOK_URL=your-slack-webhook
+# Optional: Slack Notifications (disabled for hackathon)
+# SLACK_WEBHOOK_URL=your-slack-webhook
 ```
 
-### Performance Requirements
+### Performance Requirements (Hackathon Mode)
 
-The deployment pipeline enforces these Lighthouse thresholds:
-- **Performance**: 90+
-- **Accessibility**: 95+
+For hackathon projects, we prioritize fast development over strict performance thresholds:
+- **Performance**: No strict requirements (focus on functionality)
+- **Accessibility**: Built with best practices (no strict enforcement)
 - **Best Practices**: 90+
 - **SEO**: 90+
 
@@ -412,7 +412,7 @@ npm run test -- LanguageContext
 # Analyze bundle size
 npm run build:analyze
 
-# Run Lighthouse audit
+# Run Lighthouse audit (optional)
 npm run lighthouse
 
 # Check for unused dependencies
@@ -455,16 +455,16 @@ docs: update deployment guide
 test: add coverage for theme switching
 ```
 
-## 📊 Performance Monitoring
+## 📊 Performance Monitoring (Hackathon Mode)
 
-### Lighthouse CI
-- Automated performance audits on every deployment
-- Core Web Vitals tracking
+### Lighthouse CI (Disabled for Hackathon)
+- Performance monitoring disabled for faster deployments
+- Can be enabled later for production optimization
 - Accessibility compliance verification
 - SEO optimization monitoring
 
-### Bundle Analysis
-- Automatic bundle size monitoring
+### Bundle Analysis (Disabled for Hackathon)
+- Bundle analysis disabled for faster builds
 - Dependency analysis and optimization
 - Code splitting effectiveness tracking
 
