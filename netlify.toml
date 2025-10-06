@@ -6,7 +6,6 @@
   # Environment variables for build
   environment = {
     NODE_VERSION = "22",
-    # Legacy peer deps for compatibility with React 19
     NPM_CONFIG_LEGACY_PEER_DEPS = "true"
   }
 
@@ -14,33 +13,19 @@
   # Disable Netlify's processing to avoid imagemin errors (hackathon project)
   skip_processing = true
 
-# Alternative: Enable processing but fix the imagemin command
+# Alternative processing configuration (disabled for hackathon)
 # [build.processing]
 #   skip_processing = false
-
 # [build.processing.css]
 #   bundle = true
 #   minify = true
-
 # [build.processing.js]
 #   bundle = true
 #   minify = true
-
 # [build.processing.html]
 #   pretty_urls = true
-
 # [build.processing.images]
 #   compress = true
-
-# Build contexts (already defined above)
-# [context.production]
-#   command = "npm run build"
-
-# [context.deploy-preview]
-#   command = "npm run build"
-
-# [context.develop]
-#   command = "npm run build"
 
 # Headers for security and performance
 [[headers]]
@@ -101,11 +86,7 @@
   to = "/404.html"
   status = 404
 
-# Additional build environment variables (if needed)
-# [build.environment]
-#   CUSTOM_VAR = "value"
-
-# Plugin configuration (minimal for hackathon project)
+# Plugin configuration for sitemap submission
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
@@ -118,16 +99,3 @@
       "bing",
       "yandex"
     ]
-
-# Additional environment variables for different contexts
-[context.production.environment]
-  NODE_ENV = "production"
-  VITE_APP_ENV = "production"
-
-[context.deploy-preview.environment]
-  NODE_ENV = "staging"
-  VITE_APP_ENV = "staging"
-
-[context.develop.environment]
-  NODE_ENV = "development"
-  VITE_APP_ENV = "development"
